@@ -43,10 +43,24 @@
 						<h2>Portfolio</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/SEDS.jpg" class="image fit thumb"><img src="images/SEDS.jpg" alt="" /></a>
-								<h3>Tufts SEDS Rocketry Mechanical Team</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
+    <a href="javascript:void(0);" class="image fit thumb" onclick="toggleText(this)">
+        <img src="images/SEDS.jpg" alt="" />
+    </a>
+    <h3>Tufts SEDS Rocketry Mechanical Team</h3>
+    <p class="hidden-text" style="display: none;">Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+</article>
+
+<script>
+    function toggleText(element) {
+        const textElement = element.parentElement.querySelector('.hidden-text');
+        if (textElement.style.display === "none") {
+            textElement.style.display = "block";
+        } else {
+            textElement.style.display = "none";
+        }
+    }
+</script>
+
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/MATLAB.png" class="image fit thumb"><img src="images/MATLAB.png" alt="" /></a>
 								<h3>Guidance, Navigation, Control (GNC) Automated Vehicles Research</h3>
