@@ -3219,3 +3219,121 @@ input, select, textarea {
 			}
 
 	}
+
+
+
+
+	/* Custom css */
+	@keyframes typewriter {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	#header-typewriter {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		width: 100%;
+	}
+	#header-typewriter span {
+		display: inline-block; 
+		opacity: 0;
+		animation: typewriter linear 0.1s forwards;
+	}
+	#header-typewriter span:nth-child(1) {
+		animation-delay: 2s;
+	}
+	#header-typewriter span:nth-child(2) {
+		animation-delay: 2.15s;
+	}
+	#header-typewriter span:nth-child(3) {
+		animation-delay: 2.3s;
+	}
+	#header-typewriter span:nth-child(4) {
+		animation-delay: 2.45s;
+	}
+	#header-typewriter span:nth-child(5) {
+		animation-delay: 2.6s;
+	}
+	#header-typewriter span:nth-child(6) {
+		animation-delay: 2.75s;
+	}
+	#header-typewriter span:nth-child(7) {
+		animation-delay: 2.9s;
+	}
+	#header-typewriter span:nth-child(8) {
+		animation-delay: 3.05s;
+	}
+	#header-typewriter span:nth-child(9) {
+		animation-delay: 3.2s;
+	}
+	#header-typewriter span:nth-child(10) {
+		animation-delay: 3.35s;
+	}
+	#header-typewriter span:nth-child(11) {
+		animation-delay: 3.5s;
+	}
+	#header-typewriter span:nth-child(12) {
+		animation-delay: 3.65s;
+	}
+	#header-typewriter span:nth-child(13) {
+		animation-delay: 3.8s;
+	}
+	#header-typewriter span:nth-child(14) {
+		animation-delay: 3.95s;
+	}
+	#header-typewriter span:nth-child(15) {
+		animation-delay: 4.1s;
+	}
+	#header-typewriter span:nth-child(16) {
+		animation-delay: 4.25s;
+	}
+	#header-typewriter span:nth-child(17) {
+		animation-delay: 4.4s;
+	}
+	#header-typewriter span:nth-child(18) {
+		animation-delay: 4.55s;
+	}
+	#header-typewriter span:nth-child(19) {
+		animation-delay: 4.7s;
+	}
+	#header-typewriter span:nth-child(20) {
+		animation-delay: 4.85s;
+	}
+	#header-typewriter span:nth-child(21) {
+		animation-delay: 5s;
+	}
+	#header-typewriter span:nth-child(22) {
+		animation-delay: 5.15s;
+	}
+	#header-typewriter span:nth-child(23) {
+		animation-delay: 5.3s;
+	}
+	#header-typewriter span:nth-child(24) {
+		animation-delay: 5.45s;
+	}
+	#header-typewriter span:nth-child(25) {
+		animation-delay: 5.6s;
+	}
+	#header-typewriter span:nth-child(26) {
+		animation-delay: 5.75s;
+	}
+	#header-typewriter span:nth-child(27) {
+		animation-delay: 5.9s;
+	}
+	#header-typewriter span:nth-child(28) {
+		animation-delay: 6.05s;
+	}
+	#header-typewriter span:nth-child(29) {
+		animation-delay: 6.2s;
+	}
+	#header-typewriter span:nth-child(30) {
+		animation-delay: 6.35s;
+	}
+	#header-typewriter span:nth-child(31) {
+		animation-delay: 6.5s;
+	}
