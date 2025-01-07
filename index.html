@@ -16,100 +16,102 @@
 		<style>
 			/* Navbar styling */
 			.navbar {
-				display: flex;
-				justify-content: space-between;
-				background-color: rgba(51, 51, 51, 0); /* Semi-transparent background */
-				padding: 1em;
-				position: absolute; /* Make it overlay the header */
-				top: 0;
-				width: 100%; /* Stretch the navbar to full width */
-				z-index: 10; /* Ensure it stays above other elements */
+			  display: flex;
+			  justify-content: space-between;
+			  background-color: rgba(51, 51, 51, 0); /* Semi-transparent background */
+			  padding: 1em;
+			  position: absolute; /* Make it overlay the header */
+			  top: 0;
+			  width: 100%; /* Stretch the navbar to full width */
+			  z-index: 10; /* Ensure it stays above other elements */
 			}
-		
+		  
 			.navbar a {
-				color: white;
-				text-decoration: none;
-				border: none; /* Ensures no borders are applied */
-				padding: 0.5em;
-				position: relative;
+			  color: white;
+			  text-decoration: none;
+			  border: none; /* Ensures no borders are applied */
+			  padding: 0.5em;
+			  position: relative;
+			  font-size: 1.2em;
 			}
-		
+		  
 			.navbar a:hover {
-				background-color: #33333397;
-				border-radius: 4px;
+			  background-color: #33333397;
+			  border-radius: 4px;
 			}
-		
+		  
 			/* Dropdown menu styling */
 			.dropdown {
-				position: relative;
-				display: inline-block;
+			  position: relative;
+			  display: inline-block;
 			}
-		
+		  
 			.dropdown-content {
-				display: none;
-				position: absolute;
-				background-color: #33333397;
-				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-				z-index: 1;
-				border-radius: 4px;
-				min-width: 150px;
+			  display: none;
+			  position: absolute;
+			  background-color: #333333;
+			  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			  z-index: 1;
+			  border-radius: 4px;
+			  min-width: 150px;
 			}
-		
+		  
 			.dropdown-content a {
-				color: white;
-				padding: 0.5em;
-				text-decoration: none;
-				display: block;
+			  color: white;
+			  padding: 0.5em;
+			  text-decoration: none;
+			  display: block;
 			}
-		
+		  
 			.dropdown-content a:hover {
-				background-color: #575757;
+			  background-color: #575757;
 			}
-		
+		  
 			.dropdown:hover .dropdown-content {
-				display: block;
+			  display: block;
 			}
-		
+		  
 			/* Header styling */
 			#header {
-				background-image: url('images/NASAHeader.png');
-				background-size: cover;
-				background-position: center;
-				height: 100vh; /* Full screen height */
-				position: relative; /* For the inner content to position properly */
+			  background-image: url('images/NASAHeader.png');
+			  background-size: cover;
+			  background-position: center;
+			  height: 100vh; /* Full screen height */
+			  position: relative; /* For the inner content to position properly */
 			}
-		
+		  
 			.inner {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				text-align: center;
-				color: white; /* Optional for text readability */
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  text-align: center;
+			  color: white; /* Optional for text readability */
 			}
-		
+		  
 			.inner .image.avatar img {
-				border-radius: 50%;
-				max-width: 150px;
+			  border-radius: 50%;
+			  max-width: 150px;
 			}
-		</style>
-		</head>
-		<body>
+		  </style>
+		  
+		  </head>
+		  <body>
 			<!-- Navigation bar -->
 			<div class="navbar">
-				<a href="index.html">Home</a>
-				<a href="about.html">About</a>
-				<div class="dropdown">
-					<a href="projects.html">Projects</a>
-					<div class="dropdown-content">
-						<a href="SEDS.html">SEDS Rocketry</a>
-						<a href="Research.html">GNC Research</a>
-						<a href="EWB.html">Engineers Without Borders</a>
-						<a href="ME10.html">Medieval Shield</a>
-						<a href="ME20.html">Pull Up Bar FEA</a>
-					</div>
+			  <a href="index.html">Home</a>
+			  <a href="#about">About</a> <!-- Updated to link to About section -->
+			  <div class="dropdown">
+				<a href="#projects">Projects</a>
+				<div class="dropdown-content">
+				  <a href="SEDS.html">SEDS Rocketry</a>
+				  <a href="Research.html">GNC Research</a>
+				  <a href="EWB.html">Engineers Without Borders</a>
+				  <a href="ME10.html">Medieval Shield</a>
+				  <a href="ME20.html">Pull Up Bar FEA</a>
 				</div>
-				<a href="contact.html">Contact</a>
+			  </div>
+			  <a href="#contact">Contact</a> <!-- Updated to link to Contact section -->
 			</div>
 		</body>
 		
@@ -170,6 +172,7 @@
 			<div id="main">
 
 				<!-- One -->
+				<div id="about">
 					<section id="one">
 						<header class="major">
 							<h2>About Me</h2>
@@ -179,8 +182,9 @@
 							<!--<li><a href="https://aidanhbui.github.io/SEDS/">SEDS</a></li> <a href="#" class="button">Learn More</a></li>-->
 						</ul>
 					</section>
-
+				</div>
 				<!-- Two -->
+				<div id="projects">
 					<section id="two">
 						<h2>Portfolio</h2>
 						<div class="row">
@@ -279,9 +283,10 @@
 							<!-- <li><a href="#" class="button">Full Portfolio</a></li> -->
 						</ul>
 					</section>
-
+				</div>
 				<!-- Three -->
 					<section id="three">
+						<div id="contact">
 						<h2>Get In Touch</h2>
 						<p>Feel free to reach out to learn more!</p>
 						<div class="row">
@@ -316,7 +321,8 @@
 							</div>
 						</div>
 					</section>
-
+				</div>
+			</body>
 				<!-- Four -->
 				<!--
 					<section id="four">
