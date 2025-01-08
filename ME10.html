@@ -16,20 +16,22 @@
 			/* Navbar styling */
 			.navbar {
 			  display: flex;
-			  justify-content: space-between;
+			  justify-content: flex-end; /* Align items to the right */
 			  background-color: rgba(51, 51, 51, 0.428); /* Semi-transparent background */
 			  padding: 1em;
 			  position: absolute; /* Make it overlay the header */
 			  top: 0;
 			  width: 100%; /* Stretch the navbar to full width */
 			  z-index: 10; /* Ensure it stays above other elements */
+			  gap: 0.5em; /* Reduce spacing between items */
+			  padding-right: 6em; /* Shift buttons slightly to the left */
 			}
 		  
 			.navbar a {
 			  color: rgb(255, 255, 255);
 			  text-decoration: none;
 			  border: none; /* Ensures no borders are applied */
-			  padding: 0.5em 1em; /* Ensure consistent padding for all links */
+			  padding: 0.5em 0.8em; /* Adjust padding for compactness */
 			  position: relative;
 			  font-size: 1.2em;
 			  display: flex;
@@ -119,6 +121,7 @@
 			  <a href="index.html#contact">Contact</a>
 			</div>
 		  </body>
+		  
 		  
 		<!-- Header -->
 			
