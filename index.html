@@ -30,20 +30,26 @@
 			  color: white;
 			  text-decoration: none;
 			  border: none; /* Ensures no borders are applied */
-			  padding: 0.5em;
+			  padding: 0.5em 1em; /* Ensure consistent padding for all links */
 			  position: relative;
 			  font-size: 1.2em;
+			  display: flex;
+			  align-items: center; /* Center vertically */
 			}
 		  
 			.navbar a:hover {
-			  background-color: #33333397;
+			  background-color: #33333300;
 			  border-radius: 4px;
 			}
 		  
 			/* Dropdown menu styling */
 			.dropdown {
 			  position: relative;
-			  display: inline-block;
+			}
+		  
+			.dropdown a {
+			  display: flex;
+			  align-items: center; /* Ensures the "Projects" button is aligned with other links */
 			}
 		  
 			.dropdown-content {
@@ -54,13 +60,14 @@
 			  z-index: 1;
 			  border-radius: 4px;
 			  min-width: 150px;
+			  margin-top: 0.01em; /* Adds spacing below the "Projects" button */
 			}
 		  
 			.dropdown-content a {
 			  color: white;
 			  padding: 0.5em;
 			  text-decoration: none;
-			  display: block;
+			  display: block; /* Ensures dropdown items are displayed correctly */
 			}
 		  
 			.dropdown-content a:hover {
@@ -68,7 +75,7 @@
 			}
 		  
 			.dropdown:hover .dropdown-content {
-			  display: block;
+			  display: block; /* Ensures the dropdown menu displays on hover */
 			}
 		  
 			/* Header styling */
@@ -113,7 +120,10 @@
 			  </div>
 			  <a href="#contact">Contact</a> <!-- Updated to link to Contact section -->
 			</div>
-		</body>
+		  </body>
+		  
+		  
+		  
 		
 
 		<!-- Header -->
