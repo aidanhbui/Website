@@ -10,129 +10,122 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-
 		<style>
-			/* Navbar styling */
-			.navbar {
-			  display: flex;
-			  justify-content: flex-end; /* Align items to the right */
-			  background-color: rgba(51, 51, 51, 0); /* Semi-transparent background */
-			  padding: 1em;
-			  position: absolute; /* Make it overlay the header */
-			  top: 0;
-			  width: 100%; /* Stretch the navbar to full width */
-			  z-index: 10; /* Ensure it stays above other elements */
-			  gap: 0.5em; /* Reduce spacing between items */
-			  padding-right: 6em; /* Add extra right padding to shift left */
-			}
-		  
-			.navbar a {
-			  color: white;
-			  text-decoration: none;
-			  border: none; /* Ensures no borders are applied */
-			  padding: 0.5em 0.8em; /* Adjust padding for compactness */
-			  position: relative;
-			  font-size: 1.2em;
-			  display: flex;
-			  align-items: center; /* Center vertically */
-			}
-		  
-			.navbar a:hover {
-			  background-color: #33333300;
-			  border-radius: 4px;
-			}
-		  
-			/* Dropdown menu styling */
-			.dropdown {
-			  position: relative;
-			}
-		  
-			.dropdown a {
-			  display: flex;
-			  align-items: center; /* Ensures the "Projects" button is aligned with other links */
-			}
-		  
-			.dropdown-content {
-			  display: none;
-			  position: absolute;
-			  background-color: #333333;
-			  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-			  z-index: 1;
-			  border-radius: 4px;
-			  min-width: 167px;
-			  margin-top: 0.01em; /* Adds spacing below the "Projects" button */
-			}
-		  
-			.dropdown-content a {
-			  color: white;
-			  padding: 0.5em;
-			  text-decoration: none;
-			  display: block; /* Ensures dropdown items are displayed correctly */
-			}
-		  
-			.dropdown-content a:hover {
-			  background-color: #575757;
-			}
-		  
-			.dropdown:hover .dropdown-content {
-			  display: block; /* Ensures the dropdown menu displays on hover */
-			}
-		  
-			/* Header styling */
-			#header {
-			  background-image: url('images/NASAHeader.png');
-			  background-size: cover;
-			  background-position: center;
-			  height: 100vh; /* Full screen height */
-			  position: relative; /* For the inner content to position properly */
-			}
-		  
-			.inner {
-			  position: absolute;
-			  top: 50%;
-			  left: 50%;
-			  transform: translate(-50%, -50%);
-			  text-align: center;
-			  color: white; /* Optional for text readability */
-			}
-		  
-			.inner .image.avatar img {
-			  border-radius: 50%;
-			  max-width: 150px;
-			}
-		  </style>
-		  
-		  </head>
-		  <body>
-			<!-- Navigation bar -->
-			<div class="navbar">
-			  <a href="index.html">Home</a>
-			  <a href="#about">About</a> <!-- Updated to link to About section -->
-			  <div class="dropdown">
-				<a href="#projects">Projects</a>
-				<div class="dropdown-content">
-				  <a href="SEDS.html">SEDS Rocketry</a>
-				  <a href="Research.html">GNC Research</a>
-				  <a href="EWB.html">Engineers Without Borders</a>
-				  <a href="ME10.html">Medieval Shield</a>
-				  <a href="ME20.html">Pull Up Bar FEA</a>
-				</div>
-			  </div>
-			  <a href="#contact">Contact</a> <!-- Updated to link to Contact section -->
+		  /* Navbar styling */
+		  .navbar {
+			display: flex;
+			justify-content: flex-end; /* Align items to the right */
+			background-color: rgba(51, 51, 51, 0); /* Semi-transparent background */
+			padding: 1em;
+			position: absolute; /* Make it overlay the header */
+			top: 0;
+			width: 100%; /* Stretch the navbar to full width */
+			z-index: 10; /* Ensure it stays above other elements */
+			gap: 0.5em; /* Reduce spacing between items */
+			padding-right: 6em; /* Add extra right padding to shift left */
+		  }
+	  
+		  .navbar a {
+			color: white;
+			text-decoration: none;
+			border: none; /* Ensures no borders are applied */
+			padding: 0.5em 0.8em; /* Adjust padding for compactness */
+			position: relative;
+			font-size: 1.2em;
+			display: flex;
+			align-items: center; /* Center vertically */
+		  }
+	  
+		  .navbar a:hover {
+			background-color: #33333300;
+			border-radius: 4px;
+		  }
+	  
+		  /* Dropdown menu styling */
+		  .dropdown {
+			position: relative;
+		  }
+	  
+		  .dropdown a {
+			display: flex;
+			align-items: center; /* Ensures the "Projects" button is aligned with other links */
+		  }
+	  
+		  .dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #333333;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+			border-radius: 4px;
+			min-width: 167px;
+			margin-top: 0.01em; /* Adds spacing below the "Projects" button */
+		  }
+	  
+		  .dropdown-content a {
+			color: white;
+			padding: 0.5em;
+			text-decoration: none;
+			display: block; /* Ensures dropdown items are displayed correctly */
+		  }
+	  
+		  .dropdown-content a:hover {
+			background-color: #575757;
+		  }
+	  
+		  .dropdown:hover .dropdown-content {
+			display: block; /* Ensures the dropdown menu displays on hover */
+		  }
+	  
+		  /* Header styling */
+		  #header {
+			background-image: url('images/NASAHeader.png');
+			background-size: cover;
+			background-position: center;
+			/* background-attachment: fixed; Ensures the background stays fixed when zooming out */
+			height: 100vh; /* Full screen height */
+			position: relative; /* For the inner content to position properly */
+			width: 100%; /* Ensures the header takes the full width */
+		  }
+	  
+		  .inner {
+			
+			text-align: center;
+			color: white; /* Optional for text readability */
+		  }
+	  
+		  .inner .image.avatar img {
+			border-radius: 50%;
+			max-width: 150px;
+		  }
+		</style>
+	  </head>
+	  <body class="is-preload">
+	  
+		<!-- Navigation bar -->
+		<div class="navbar">
+		  <a href="index.html">Home</a>
+		  <a href="#about">About</a> <!-- Updated to link to About section -->
+		  <div class="dropdown">
+			<a href="#projects">Projects</a>
+			<div class="dropdown-content">
+			  <a href="SEDS.html">SEDS Rocketry</a>
+			  <a href="Research.html">GNC Research</a>
+			  <a href="EWB.html">Engineers Without Borders</a>
+			  <a href="ME10.html">Medieval Shield</a>
+			  <a href="ME20.html">Pull Up Bar FEA</a>
 			</div>
-		  </body>
-		  
-		  
-		  
-		  
-		  
-		
-
+		  </div>
+		  <a href="#contact">Contact</a> <!-- Updated to link to Contact section -->
+		</div>
+	  
 		<!-- Header -->
-		<header id="header" style="background-image: url('images/NASAHeader.png'); background-size: cover; background-position: center;">
-  
+		<header id="header">
+		  <!-- Your header content goes here -->
+		</header>
+		
+	  </body>
+	  
 			
 	
 	
@@ -142,7 +135,7 @@
   <div class="inner">
 	<a href="#" class="image avatar"><img src="images/Avatar1.jpg" alt="" /></a>
 
-	<h1><strong id="header-typewriter">
+	<h1><strong id="header-typewriter" style="color: white;">
 		
 		<span>H</span>
 		<span>i</span>
@@ -668,20 +661,127 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</div>
 
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.instagram.com/aidanhbui/?hl=en" class="icon brands fa-instagram"><span class="label">Twitter</span></a></li>
-						<li><a href="https://www.linkedin.com/in/aidan-hoidal-bui-799855294?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bc2ExZqBgT2KxMDMZaTTlzw%3D%3D" class="icon brands fa-linkedin"><span class="label">Github</span></a></li>
-						<li><a href="https://github.com/aidanhbui" class="icon brands fa-github"><span class="label">Dribbble</span></a></li>
-						<li><a href="https://app.slack.com/client/TD0KLHL2J/CCZEAB64D" class="icon brands fa-slack"><span class="label">Dribbble</span></a></li>
-						 
-					</ul>
-					<ul class="copyright">
-						<!-- <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
-					</ul>
-				</div>
-			</footer>
+		<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your GitHub Website</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Basic styling for body and content */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Ensures body takes full height */
+    }
+
+    /* Main content styling */
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    footer a:hover {
+      color: #ddd;
+    }
+  </style>
+</head>
+
+
+ 
+  <footer>
+    <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+  </footer>
+</body>
+</html>-->
+
+		
+<footer id="footer">
+	<style>
+	  /* Ensure html and body take up the full height */
+	  
+  
+	  /* The content area */
+	  .content {
+		min-height: 100%;  /* Ensures content area is at least 100% of the page height */
+		padding-bottom: 50px; /* Space for the footer */
+	  }
+  
+	  /* Footer styling */
+	  #footer {
+		background-color: #333; /* Background color */
+		color: white;            /* Footer text color */
+		padding: 10px 0;         /* Padding for footer */
+		text-align: center;      /* Center-align content */
+		width: 100%;             /* Make footer full width */
+		clear: both;             /* Ensure the footer is positioned after all content */
+	  }
+  
+	  #footer .icons {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	  }
+  
+	  #footer .icons li {
+		display: inline-block;
+		margin: 0 10px;
+	  }
+  
+	  #footer .icons .icon {
+		color: white; /* Ensure icons are white */
+		text-decoration: none;
+	  }
+  
+	  #footer .icons .icon:hover {
+		color: #ddd; /* Optional: color change on hover */
+	  }
+	</style>
+  
+	<div class="content">
+	 
+	</div>
+  
+	<div class="inner">
+	  <ul class="icons">
+		<li><a href="https://www.instagram.com/aidanhbui/?hl=en" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+		<li><a href="https://www.linkedin.com/in/aidan-hoidal-bui-799855294?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bc2ExZqBgT2KxMDMZaTTlzw%3D%3D" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="https://github.com/aidanhbui" class="icon brands fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://app.slack.com/client/TD0KLHL2J/CCZEAB64D" class="icon brands fa-slack"><span class="label">Slack</span></a></li>
+	  </ul>
+	  <ul class="copyright">
+		
+	  </ul>
+	</div>
+  </footer>
+
+		  
+		  
+		  
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
