@@ -9,9 +9,9 @@
     <style>
   #header_new {
     height:100vh;
-    background-color: #1f1815;
+    background-color: #ffffff;
 		background-attachment: scroll,								scroll;
-		background-image: url("./images/NASAHeader.png");
+		/* background-image: url("./images/NASAHeader.png"); */
 		background-position: top left,							top left;
 		background-repeat:								no-repeat;
 		background-size: cover;
@@ -21,7 +21,7 @@
 		  /* Navbar styling */
 		  .navbar {
 			display: flex;
-			justify-content: flex-end; /* Align items to the right */
+			justify-content: space-between; /* Align items to the right */
 			background-color: rgba(51, 51, 51, 0); /* Semi-transparent background */
 			padding: 1em;
 			/* position: absolute; Make it overlay the header */
@@ -35,7 +35,7 @@
 		  }
 	  
 		  .navbar a {
-			color: white;
+			color: #575757;
 			text-decoration: none;
 			border: none; /* Ensures no borders are applied */
 			padding: 0.5em 0.8em; /* Adjust padding for compactness */
@@ -72,7 +72,7 @@
 		  }
 	  
 		  .dropdown-content a {
-			color: white;
+			color: #ffffff;
 			padding: 0.5em;
 			text-decoration: none;
 			display: block; /* Ensures dropdown items are displayed correctly */
@@ -88,7 +88,7 @@
 	  
 		  /* Header styling */
 		  #header {
-			background-image: url('images/NASAHeader.png');
+			/* background-image: url('images/NASAHeader.png'); */
 			background-size: cover;
 			background-position: center;
 			/* background-attachment: fixed; Ensures the background stays fixed when zooming out */
@@ -103,10 +103,11 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: 90%;
+            height: 120%; 
 			text-align: center;
             transform: translateY(-5%);
 			color: white; /* Optional for text readability */
+        
 		  }
 	  
 		  .inner .image.avatar img {
@@ -114,7 +115,11 @@
 			max-width: 150px;
             margin-bottom: 1em;
 		  }
-		
+		#resume-button {
+            background-color: #ffffff;
+            border: 1px solid black;
+            padding: 0.5rem 1.5rem;
+        }
         /* Add spacing below the message box */
         #message {
             margin-bottom: 1em;
@@ -166,24 +171,31 @@
 <body>
     <header id="header_new">
         <div class="navbar">
+            <div>
+                 <a href="index.html">Aidan Hoidal-Bui</a>
+            </div>
+            <div style="display:flex;flex-direction: row;">
             <a href="index.html">Home</a>
             <a href="#about">About</a> <!-- Updated to link to About section -->
             <div class="dropdown">
                 <a href="#projects">Projects</a>
-                <div class="dropdown-content">
+                <div class="dropdown-content" style="color:#575757;">
                     <a href="SEDS.html">SEDS Rocketry</a>
                     <a href="Research.html">GNC Research</a>
                     <a href="EWB.html">Engineers Without Borders</a>
                     <a href="ME10.html">Medieval Shield</a>
                     <a href="ME20.html">Pull Up Exercise Bar FEA</a>
                 </div>
+                </div>
+           <a href="#contact">Contact</a> <!-- Updated to link to Contact section -->
             </div>
-            <a href="#contact">Contact</a> <!-- Updated to link to Contact section -->
+            
         </div>
-        <div class="inner">
-            <a href="#" class="image avatar"><img src="images/Avatar1.jpg" alt="" /></a>
-    
-            <h1><strong id="header-typewriter" style="color: white;">
+        <div class="inner" style="display:flex; flex-direction: row; gap:2.5rem; padding:2.5rem 2.5vw; margin-top:10rem;">
+            <div id="about"style="width:50%;">
+            <section id="one">
+                <header class="major">
+                     <h1><strong id="header-typewriter" style="color: rgb(0, 0, 0);">
     
                     <span>H</span>
                     <span>i</span>
@@ -217,6 +229,39 @@
                     <span>i</span>
                     <span>!</span>
                 </strong>
+            </h1>
+                </header>
+                <!-- <p>I am a driven and resilient Mechanical Engineering student at Tufts University passionate about space
+                    exploration, robotics, and using engineering to solve real world problems like climate change. I am
+                    part of several clubs, including Tufts Students for the Exploration and Development of Space (SEDS)
+                    Rocketry Mechanical Team, Tufts' Engineers Without Borders Chapter, and Club Water Polo. </p> -->
+                   <div style="text-align: left;">
+                    <p>
+                        Hi, I’m Aidan! I’m pursuing a bachelor’s degree in Mechanical Engineering with a focus in Mechatronics at Tufts University, graduating in May 2027. I'm obsessed with mechanical product design and using multidisciplinary engineering to solve real-world problems. My goal is to bridge the gap between engineering and design, creating systems that blend functionality with elegance.
+                    </p>
+                    <p>
+                        Outside of school, I love building and experimenting, most recently developing a fully autonomous vehicle from the ground up over the summer. I like to stay balanced through physically rigorous activities like Club Water Polo, Intramural Basketball, and distance running.
+                    </p>
+                    <p>
+                        If you’re currently tackling ambitious, interdisciplinary challenges and are looking for a creative Engineer with strong problem-solving and people skills, I’d love to connect.
+                    </p>
+                    <p>
+                        Feel free to check out my resume and portfolio!
+                    </p>
+                    </div>
+                <div style = "text-align: left; margin-bottom: 15rem;">
+                    <a id="resume-button" href="https://docs.google.com/document/d/e/2PACX-1vSolPIzfskse0OCh_4__uKa8H-gPNunqmjib5K0uw5pEgcZ3o_QqzRidt0C2P3af2OT3jQRjxpM7-0U/pub" target="_blank">Resume</a>
+                </div>
+                    <ul class="actions">
+                    <!--<li><a href="https://aidanhbui.github.io/SEDS/">SEDS</a></li> <a href="#" class="button">Learn More</a></li>-->
+                </ul>
+            </section>
+        </div>
+            <div style="width:50%;">
+                <img src="images/Avatar1.jpg" style="width:50%;" alt="" />
+    
+           
+                </div>
         </div>
         <!-- Your header content goes here -->
       </header>
@@ -224,23 +269,9 @@
     <div id="main">
 
         <!-- One -->
-        <div id="about">
-            <section id="one">
-                <header class="major">
-                    <h2>About Me</h2>
-                </header>
-                <!-- <p>I am a driven and resilient Mechanical Engineering student at Tufts University passionate about space
-                    exploration, robotics, and using engineering to solve real world problems like climate change. I am
-                    part of several clubs, including Tufts Students for the Exploration and Development of Space (SEDS)
-                    Rocketry Mechanical Team, Tufts' Engineers Without Borders Chapter, and Club Water Polo. </p> -->
-					<p>I am a Mechanical Engineering student at Tufts University. I'm passionate about space exploration, robotics, and using multidisciplinary engineering, academic, and professional skills to solve real world problems such as those brought on by climate change. I am actively involved in several clubs including Tufts Students for the Exploration and Development of Space Rocketry and the Tufts Chapter of Engineers Without Borders. I stay balanced through physically rigorous activities such as Club Water Polo, Intramural Basketball, and distance running.</p>
-                <ul class="actions">
-                    <!--<li><a href="https://aidanhbui.github.io/SEDS/">SEDS</a></li> <a href="#" class="button">Learn More</a></li>-->
-                </ul>
-            </section>
-        </div>
+        
         <!-- Two -->
-        <div id="projects">
+        <div id="projects" style="margin-top: 5rem;">
             <section id="two">
                 <h2>Portfolio</h2>
                 <div class="row">
@@ -319,7 +350,14 @@
                         <h3>More Projects in the Spring!</h3>
                     </article>
 
-
+                    <article class="col-6 col-12-xsmall work-item">
+                        <a href="./Autonomous-Vehicle.html" class="thumbnail-container"
+                            style="width:100%; aspect-ratio: 16/9; height: auto; overflow:hidden;">
+                            <img class="" src="images/placeholder.webp" alt="SEDS Logo" style="width:100%;">
+                            <div class="thumbnail-text">Learn More</div>
+                        </a>
+                        <h3>Jetson Autonomous Vehicle Project</h3>
+                    </article>
 
 
 
