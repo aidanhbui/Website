@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Strata by HTML5 UP</title>
+		<title>Finite Element Analysis (FEA)</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -14,17 +14,18 @@
 	<style>
 		/* Navbar styling */
 		.navbar {
-		  display: flex;
-		  justify-content: flex-end; /* Align items to the right */
-		  background-color: rgba(51, 51, 51, 0.428); /* Semi-transparent background */
-		  padding: 1em;
-		  position: absolute; /* Make it overlay the header */
-		  top: 0;
-		  width: 100%; /* Stretch the navbar to full width */
-		  z-index: 10; /* Ensure it stays above other elements */
-		  gap: 0.5em; /* Reduce spacing between items */
-		  padding-right: 6em; /* Shift buttons slightly to the left */
-		}
+    display: flex;
+    justify-content: flex-start; /* allow left/right spacing via margin auto */
+    align-items: center;
+	background-color: rgba(51, 51, 51, 0.428);
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    gap: 0.5em;
+    padding-right: 6em;
+}
 	  
 		.navbar a {
 		  color: rgb(255, 255, 255);
@@ -70,6 +71,10 @@
 		  display: block; /* Ensures dropdown items are displayed correctly */
 		}
 	  
+		header.major {
+    padding-top: 8vh; /* 10% of viewport height */
+}
+
 		.dropdown-content a:hover {
 		  background-color: #575757;
 		}
@@ -86,6 +91,8 @@
 		  height: 100vh; /* Full screen height */
 		  position: relative; /* For the inner content to position properly */
 		}
+
+		
 	  
 		.inner {
 		  position: absolute;
@@ -100,25 +107,38 @@
 		  border-radius: 50%;
 		  max-width: 150px;
 		}
+
+		/* Project Header Styling */
+.major h2 {
+    color: black;
+}
+
 	  </style>
 	  </head>
 	  <body>
 		<!-- Navigation bar -->
 		<div class="navbar">
-		  <a href="index.html">Home</a>
-		  <a href="index.html#about">About</a>
-		  <div class="dropdown">
-			<a href="index.html#projects">Projects</a>
-			<div class="dropdown-content">
-			  <a href="SEDS.html">SEDS Rocketry</a>
-			  <a href="Research.html">GNC Research</a>
-			  <a href="EWB.html">Engineers Without Borders</a>
-			  <a href="ME10.html">Medieval Shield</a>
-			  <a href="ME20.html">Pull Up Exercise Bar FEA</a>
-			</div>
-		  </div>
-		  <a href="index.html#contact">Contact</a>
-		</div>
+    <!-- Name on top left -->
+    <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
+        <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
+    </div>
+
+    <!-- Navigation links on right -->
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="dropdown">
+        <a href="#projects">Projects</a>
+        <div class="dropdown-content" style="color:#575757;">
+            <a href="SEDS.html">SEDS Rocketry</a>
+            <a href="ME10.html">Design/Manufacturing</a>
+            <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
+            <a href="EWB.html">Engineers Without Borders</a>
+            <a href="ME20.html">Simulations</a>
+            <a href="Research.html">Autonomous Vehicles Research</a>
+        </div>
+    </div>
+    <a href="index.html#contact">Contact</a>
+</div>
 	  </body>
 		<!-- Header -->
 			

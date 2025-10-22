@@ -1,556 +1,411 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE HTML> 
 <html>
-	<head>
-		<title>Autonomous Vehicle</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-		<style>
-			/* Navbar styling */
-			.navbar {
-			  display: flex;
-			  justify-content: flex-end; /* Align items to the right */
-			  background-color: rgba(51, 51, 51, 0.428); /* Semi-transparent background */
-			  padding: 1em;
-			  position: absolute; /* Make it overlay the header */
-			  top: 0;
-			  width: 100%; /* Stretch the navbar to full width */
-			  z-index: 10; /* Ensure it stays above other elements */
-			  gap: 0.5em; /* Reduce spacing between items */
-			  padding-right: 6em; /* Shift buttons slightly to the left */
-			}
-		  
-			.navbar a {
-			  color: rgb(255, 255, 255);
-			  text-decoration: none;
-			  border: none; /* Ensures no borders are applied */
-			  padding: 0.5em 0.8em; /* Adjust padding for compactness */
-			  position: relative;
-			  font-size: 1.2em;
-			  display: flex;
-			  align-items: center; /* Center vertically */
-			}
-		  
-			.navbar a:hover {
-			  background-color: #33333300;
-			  border-radius: 4px;
-			}
-		  
-			/* Dropdown menu styling */
-			.dropdown {
-			  position: relative;
-			}
-		  
-			.dropdown a {
-			  display: flex;
-			  align-items: center; /* Ensures the "Projects" button is aligned with other links */
-			}
-		  
-			.dropdown-content {
-			  display: none;
-			  position: absolute;
-			  background-color: #333333;
-			  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-			  z-index: 1;
-			  border-radius: 4px;
-			  min-width: 167px;
-			  margin-top: 0.01em; /* Adds spacing below the "Projects" button */
-			}
-		  
-			.dropdown-content a {
-			  color: white;
-			  padding: 0.5em;
-			  text-decoration: none;
-			  display: block; /* Ensures dropdown items are displayed correctly */
-			}
-		  
-			.dropdown-content a:hover {
-			  background-color: #575757;
-			}
-		  
-			.dropdown:hover .dropdown-content {
-			  display: block; /* Ensures the dropdown menu displays on hover */
-			}
-		  
-			/* Header styling */
-			#header {
-			  background-image: url('images/NASAHeader.png');
-			  background-size: cover;
-			  background-position: center;
-			  height: 100vh; /* Full screen height */
-			  position: relative; /* For the inner content to position properly */
-			}
-		  
-			.inner {
-			  position: absolute;
-			  top: 50%;
-			  left: 50%;
-			  transform: translate(-50%, -50%);
-			  text-align: center;
-			  color: white; /* Optional for text readability */
-			}
-		  
-			.inner .image.avatar img {
-			  border-radius: 50%;
-			  max-width: 150px;
-			}
-		  </style>
-		  </head>
-		  <body>
-			<!-- Navigation bar -->
-			<div class="navbar">
-			  <a href="index.html">Home</a>
-			  <a href="index.html#about">About</a>
-			  <div class="dropdown">
-				<a href="index.html#projects">Projects</a>
-				<div class="dropdown-content">
-				  <a href="SEDS.html">SEDS Rocketry</a>
-				  <a href="Research.html">GNC Research</a>
-				  <a href="EWB.html">Engineers Without Borders</a>
-				  <a href="ME10.html">Medieval Shield</a>
-				  <a href="ME20.html">Pull Up Exercise Bar FEA</a>
-				</div>
-			  </div>
-			  <a href="index.html#contact">Contact</a>
-			</div>
-		  </body>
-		  
-		  
-		<!-- Header -->
-			
-		<!-- Main -->
-			<div id="main">
+<head>
+  <title>Autonomous Vehicle</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>Medieval Shield Project</h2>
-						</header>
-						<!-- <p>Our objective for this project was to design and fabricate a medieval-style shield using sheet metal. We applied a variety of manufacturing techniques, including cutting, shaping, and assembling sheet metal. Working hands-on with 2mm-thick aluminum sheets provided a deeper, practical understanding of material properties, such as malleability, ductility, and strength. The project reinforced theoretical concepts by turning them into practical applications. Tools included the vertical band saw, electric shear, bead roller, and English wheel. For post-processing, we used a grinder, buffing wheel, and a dremel to enhance the shield's surface finish. By combining these techniques with teamwork and problem-solving, we successfully created a polished shield while deepening our understanding of materials and manufacturing processes.
-                            
-</p> -->
-<p>The aim of this project was to design and fabricate a scaled, functional, and aesthetically pleasing medieval-style shield using sheet metal. Applying a variety of manufacturing techniques, including cutting, shaping, and assembling sheet metal, we worked with 2mm-thick aluminum sheets to gain a deeper understanding of material properties such as malleability, ductility, and strength. We decided to use 2mm-thick aluminum because it was sturdy but allowed cutting with electric hand shears. We quickly found out that while the shears could cut straight lines, we needed a more poweful tool for cutting the shield's curves. The vertical band saw proved to be perfect for the job. We also used a bead roller and an English wheel to bend and deform the metal. Unfortunately, the bead roller left deep scratches along the perimeter of the shield. We used a dremel to sand down these edges which then left its own blemishes which we smoothed out with a buffing wheel, enhancing the shield's surface finish and curvature. For the handles, we intended to use brazing to attach them to the shield. However, it didn't provide the strength we needed for a shield that could potentially suffer blows. Instead, we used rivets to ensure the handles would not separate. By combining these techniques with teamwork and problem-solving, we successfully created a polished shield that is comfortable to grip, light enough to wield, but heavy and solid enough to withstand force. </p>
-						<ul class="actions">
-							
-						</ul>
-					</section>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-				<!-- Two -->
-					<section id="two">
-						<!--<h2>Recent Work</h2>-->
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/BandSaw.JPG" class="image fit"><img src="images/BandSaw.JPG" alt="" /></a>
-								<h3>Vertical Bandsaw</h3>
-								
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/EnglishWheel.PNG" class="image fit"><img src="images/EnglishWheel.PNG" alt="" /></a>
-								<h3>English Wheel</h3>
-								
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/BeadRoller.JPG" class="image fit"><img src="images/BeadRoller.JPG" alt="" /></a>
-								<h3>Bead Roller</h3>
-								
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/Bending.JPG" class="image fit"><img src="images/Bending.JPG" alt="" /></a>
-								<h3>Bending</h3>
-								
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/Grinding.JPG" class="image fit"><img src="images/Grinding.JPG" alt="" /></a>
-								<h3>Grinding</h3>
-								
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-    <!-- <a href="./assets/L1SLOMO.MP4" class="image fit thumb">
-        
-        <video width="100%" height="auto" controls >
-            <source src="./assets/L1SLOMO.MP4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </a> -->
-    <article class="col-6 col-12-xsmall work-item">
-        <a href="images/Rivets.JPG" class="image fit"><img src="images/Rivets.JPG" alt="" /></a>
-        <h3>Riveting</h3>
-        
-    </article>
-   
-<!-- CSS -->
-<style>
-    .work-item img {
-        width: 100%; /* Ensures the image fills its container */
-        height: auto; /* Maintains aspect ratio */
-        object-fit: cover; /* Ensures uniform image layout */
-        max-height: 300px; /* Set a uniform maximum height */
-    }
-
-    .work-item a.image {
-        display: block;
-        overflow: hidden; /* Ensures images don’t overflow their container */
-    }
-</style>
-
-
-
-						</div>
-						<ul class="actions">
-							<!--<li><a href="#" class="button">Full Portfolio</a></li>-->
-						</ul>
-					</section>
-
-				
-				<!-- Four -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
-
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
+  <style>
+    /* Navbar styling */
+     .navbar {
+    display: flex;
+    justify-content: flex-start; /* allow left/right spacing via margin auto */
+    align-items: center;
+	background-color: rgba(51, 51, 51, 0.428);
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    gap: 0.5em;
+    padding-right: 6em;
 }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
+.major {
+    margin-top: 40px; /* Adjust the value to how much space you want */
+}
 
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
-							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 0.8em;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+    }
 
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
+    .navbar a:hover {
+      background-color: #33333300;
+      border-radius: 4px;
+    }
 
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
+    .dropdown {
+      position: relative;
+    }
 
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333333;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      min-width: 167px;
+      margin-top: 0.01em;
+      z-index: 20;
+    }
 
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
+    .dropdown-content a {
+      color: white;
+      padding: 0.5em;
+      text-decoration: none;
+      display: block;
+    }
 
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
+    .dropdown-content a:hover {
+      background-color: #575757;
+    }
 
-					</section>
-				-->
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-			</div>
+    /* Header styling */
+    #header {
+      background-image: url('images/NASAHeader.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
+    }
 
-		<!-- Footer -->
-			<!-- <footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.instagram.com/aidanhbui/?hl=en" class="icon brands fa-instagram"><span class="label">Twitter</span></a></li>
-						<li><a href="https://www.linkedin.com/in/aidan-hoidal-bui-799855294?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bc2ExZqBgT2KxMDMZaTTlzw%3D%3D" class="icon brands fa-linkedin"><span class="label">Github</span></a></li>
-						<li><a href="https://github.com/aidanhbui" class="icon brands fa-github"><span class="label">Dribbble</span></a></li>
-						<li><a href="https://app.slack.com/client/TD0KLHL2J/CCZEAB64D" class="icon brands fa-slack"><span class="label">Dribbble</span></a></li>
-					</ul>
-					
-						
-					</ul>
-				</div>
-			</footer> -->
+    .inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    .inner .image.avatar img {
+      border-radius: 50%;
+      max-width: 150px;
+    }
 
-	</body>
+    /* Image/video formatting */
+    .work-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .work-item img.second-image {
+      object-fit: contain;
+      background-color: #f3f3f3;
+    }
+
+    .work-item video {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .col-6 {
+      flex: 1 1 calc(50% - 20px);
+    }
+
+    @media (max-width: 768px) {
+      .col-6 {
+        flex: 1 1 100%;
+      }
+    }
+
+    /* Swiper slider styling */
+    .swiper {
+      max-width: 900px;
+      height: 250px;
+      margin: 2em auto;
+    }
+
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.3s;
+    }
+
+    .swiper-slide img {
+      max-width: 100%;
+      max-height: 150px;
+      border-radius: 7.5px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    .swiper-slide-label {
+      margin-top: 0.5em;
+      font-weight: bold;
+      text-align: center;
+      color: black;
+    }
+
+    .swiper-slide:not(.swiper-slide-active) {
+      opacity: 0.4;
+    }
+
+    /* Lightbox styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox.show {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 2em;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Electronics title */
+    #electronics-title {
+      text-align: center;
+      font-size: 2em;
+      margin-top: 2em;
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+
+  <!-- Navigation bar -->
+<div class="navbar">
+    <!-- Name on top left -->
+    <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
+        <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
+    </div>
+
+    <!-- Navigation links on right -->
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="dropdown">
+        <a href="#projects">Projects</a>
+        <div class="dropdown-content" style="color:#575757;">
+            <a href="SEDS.html">SEDS Rocketry</a>
+            <a href="ME10.html">Design/Manufacturing</a>
+            <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
+            <a href="EWB.html">Engineers Without Borders</a>
+            <a href="ME20.html">Simulations</a>
+            <a href="Research.html">Autonomous Vehicles Research</a>
+        </div>
+    </div>
+    <a href="index.html#contact">Contact</a>
+</div>
+  <!-- Main -->
+  <div id="main">
+
+    <!-- Section One -->
+    <section id="one">
+      <header class="major">
+        <h2 style="color:black;">Jetson Autonomous Vehicle</h2>
+      </header>
+
+      <p>
+        <span style="font-weight:bold; color:black;">Project:</span> During the summer of 2025, I took my growing passion
+        for self-driving cars and designed and built a 1:10-scale autonomous vehicle powered by an NVIDIA Jetson Nano as
+        a personal passion project. I developed a custom chassis and motor control system, integrating ultrasonic sensors,
+        IMU fusion, and a camera-based perception system to enable real-time 360° localization in dynamic environments.
+        To enhance reliability, I implemented a fault detection module that monitored sensor health and maintained safe
+        operation under uncertainty. Using TensorFlow, I trained a convolutional neural network on over 20,000 augmented
+        frames for lane detection and obstacle avoidance, then deployed the model with CUDA-accelerated OpenCV
+        preprocessing—achieving roughly 90% accuracy on test track evaluations.
+      </p>
+
+      <!-- <p>
+        <span style="font-weight:bold; color:black;">Takeaways:</span> Improved understanding of embedded systems, real-time data processing, and cross-disciplinary problem-solving.
+      </p> -->
+    </section>
+
+    <!-- Section Two -->
+    <section id="two">
+      <div class="row">
+        <article class="col-6 work-item">
+          <a href="images/JetsonAngle.jpg" class="image fit">
+            <img src="images/JetsonAngle.jpg" alt="Jetson Angle" style="object-fit: cover; object-position: center -250px;" />
+          </a>
+          <h3>My Jetson Self-Driving Car</h3>
+        </article>
+
+        <article class="col-6 work-item">
+          <a href="images/jetsontopview.jpg" class="image fit">
+            <img src="images/jetsontopview.jpg" alt="Top View" class="second-image" />
+          </a>
+          <h3>Top View</h3>
+        </article>
+
+        <article class="col-6 work-item">
+          <a href="images/JetsonBack.jpg" class="image fit">
+            <img src="images/JetsonBack.jpg" alt="Back View" class="second-image" />
+          </a>
+          <h3>Back View</h3>
+        </article>
+
+        <article class="col-6 work-item">
+          <div class="image fit">
+            <video controls autoplay muted loop>
+              <source src="images/IMG_3671.mov" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3>Jetson Nano Vehicle in Action</h3>
+        </article>
+
+        <!-- Last two chassis images side by side -->
+        <article class="col-6 work-item">
+          <a href="images/Chassis.png" class="image fit">
+            <img src="images/Chassis.png" alt="Chassis 1" />
+          </a>
+          <h3>Vehicle Chassis Design</h3>
+        </article>
+
+        <article class="col-6 work-item">
+          <a href="images\FEAchassis.png" class="image fit">
+            <img src="images\FEAchassis.png" alt="FEA Chassis" />
+          </a>
+          <h3>Chassis Stress Testing FEA</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- Slider Image Reel Section -->
+    <section>
+      <h2 id="electronics-title">Primary Electronics:</h2>
+      <div class="swiper mySwiperAutonomous">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/nano.jpg" alt="Jetson Nano" />
+            <div class="swiper-slide-label">Jetson Nano</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/v2cam.png" alt="Camera" />
+            <div class="swiper-slide-label">V2 Camera Module</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/Ultrasonic.jpg" alt="Ultrasonic Sensor" />
+            <div class="swiper-slide-label">Ultrasonic Sensor</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/IMU.jpg" alt="IMU" />
+            <div class="swiper-slide-label">IMU Sensor</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/l298n.jpg" alt="Motor Driver" />
+            <div class="swiper-slide-label">L298N Motor Driver</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images\Screen.jpg" alt="OLED Display" />
+            <div class="swiper-slide-label">OLED Display</div>
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-autonomous"></div>
+        <div class="swiper-button-next swiper-button-next-autonomous"></div>
+        <div class="swiper-button-prev swiper-button-prev-autonomous"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    // Swiper setup for Autonomous Vehicle
+    const swiperAutonomous = new Swiper(".mySwiperAutonomous", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 2.5,
+      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination-autonomous",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-autonomous",
+        prevEl: ".swiper-button-prev-autonomous",
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+
+    // Lightbox logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.swiper-slide img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('show');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('show');
+    });
+  </script>
+</body>
 </html>

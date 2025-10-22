@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Strata by HTML5 UP</title>
+		<title>AV Research</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -14,18 +14,19 @@
 	<body class="is-preload">
 		<style>
 			/* Navbar styling */
-			.navbar {
-			  display: flex;
-			  justify-content: flex-end; /* Align items to the right */
-			  background-color: rgba(51, 51, 51, 0.428); /* Semi-transparent background */
-			  padding: 1em;
-			  position: absolute; /* Make it overlay the header */
-			  top: 0;
-			  width: 100%; /* Stretch the navbar to full width */
-			  z-index: 10; /* Ensure it stays above other elements */
-			  gap: 0.5em; /* Reduce spacing between items */
-			  padding-right: 6em; /* Shift buttons slightly to the left */
-			}
+			 .navbar {
+    display: flex;
+    justify-content: flex-start; /* allow left/right spacing via margin auto */
+    align-items: center;
+	background-color: rgba(51, 51, 51, 0.428);
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    gap: 0.5em;
+    padding-right: 6em;
+}
 		  
 			.navbar a {
 			  color: rgb(255, 255, 255);
@@ -38,6 +39,11 @@
 			  align-items: center; /* Center vertically */
 			}
 		  
+
+			.major {
+    margin-top: 40px; /* Adjust the value to how much space you want */
+}
+
 			.navbar a:hover {
 			  background-color: #33333300;
 			  border-radius: 4px;
@@ -101,25 +107,38 @@
 			  border-radius: 50%;
 			  max-width: 150px;
 			}
+
+			/* Project Header Styling */
+.major h2 {
+    color: black;
+}
+
 		  </style>
 		  </head>
 		  <body>
 			<!-- Navigation bar -->
 			<div class="navbar">
-			  <a href="index.html">Home</a>
-			  <a href="index.html#about">About</a>
-			  <div class="dropdown">
-				<a href="index.html#projects">Projects</a>
-				<div class="dropdown-content">
-				  <a href="SEDS.html">SEDS Rocketry</a>
-				  <a href="Research.html">GNC Research</a>
-				  <a href="EWB.html">Engineers Without Borders</a>
-				  <a href="ME10.html">Medieval Shield</a>
-				  <a href="ME20.html">Pull Up Exercise Bar FEA</a>
-				</div>
-			  </div>
-			  <a href="index.html#contact">Contact</a>
-			</div>
+    <!-- Name on top left -->
+    <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
+        <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
+    </div>
+
+    <!-- Navigation links on right -->
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="dropdown">
+        <a href="#projects">Projects</a>
+        <div class="dropdown-content" style="color:#575757;">
+            <a href="SEDS.html">SEDS Rocketry</a>
+            <a href="ME10.html">Design/Manufacturing</a>
+            <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
+            <a href="EWB.html">Engineers Without Borders</a>
+            <a href="ME20.html">Simulations</a>
+            <a href="Research.html">Autonomous Vehicles Research</a>
+        </div>
+    </div>
+    <a href="index.html#contact">Contact</a>
+</div>
 		  </body>
 		<!-- Header -->
 			
@@ -129,7 +148,8 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>Guidance, Navigation, Control (GNC) Automated Vehicles Research</h2>
+							<h2 style="color: black;">Autonomous Vehicles Research</h2>
+
 						</header>
 						<!-- <p>Evaluated vehicle interactions to develop novel control, navigation, and interface technologies to enable safe human-robot interactions in critical automated vehicle operations.
                             Analyzed US Department of Transportation data using MATLAB and Python to identify patterns of velocity distributions and passing rates to help validate and bound navigation performance.
@@ -137,7 +157,7 @@
                             Set weekly and monthly deliverable deadlines, met established benchmarks to ensure the research would be accurately and timely completed.
                             
 </p> -->
-<p>I spent a summer working with Professor Jason Rife, Chair of Mechanical Engineering at Tufts University on a project designed to develop novel control, navigation, and interface technologies to enable safe human-robot interactions in automated vehicle operations.  Using MATLAB and Python, I analyzed data from the US Department of Transportation to evaluate vehicle interactions and identify patterns in velocity distributions and passing rates to help validate and bound navigation performance. I also developed logical methodologies, graphical data analysis, and a dynamic spot-check animation to enhance system verification and performance. </p>
+<p>Research project with Professor Jason Rife developing novel control, navigation, and interface technologies to enable safe human-robot interactions in automated vehicle operations.  Using MATLAB and Python, I analyzed data from the US Department of Transportation to evaluate vehicle interactions and identify patterns in velocity distributions and passing events to help validate and bound navigation performance. I also developed logical methodologies, graphical data analysis, and a dynamic spot-check animation to enhance system verification and performance. </p>
 						<ul class="actions">
 							
 						</ul>

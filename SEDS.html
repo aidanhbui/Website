@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Strata by HTML5 UP</title>
+		<title>SEDS Rocketry</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -15,17 +15,19 @@
 		<style>
 			/* Navbar styling */
 			.navbar {
-			  display: flex;
-			  justify-content: flex-end; /* Align items to the right */
-			  background-color: rgba(51, 51, 51, 0.428); /* Semi-transparent background */
-			  padding: 1em;
-			  position: absolute; /* Make it overlay the header */
-			  top: 0;
-			  width: 100%; /* Stretch the navbar to full width */
-			  z-index: 10; /* Ensure it stays above other elements */
-			  gap: 0.5em; /* Reduce spacing between items */
-			  padding-right: 6em; /* Shift buttons slightly to the left */
-			}
+    display: flex;
+    justify-content: flex-start; /* allow left/right spacing via margin auto */
+    align-items: center;
+	background-color: rgba(51, 51, 51, 0.428);
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    gap: 0.5em;
+    padding-right: 6em;
+}
+
 		  
 			.navbar a {
 			  color: rgb(255, 255, 255);
@@ -47,6 +49,11 @@
 			.dropdown {
 			  position: relative;
 			}
+
+			.major {
+    margin-top: 40px; /* Adjust the value to how much space you want */
+}
+
 		  
 			.dropdown a {
 			  display: flex;
@@ -102,25 +109,41 @@
 			  max-width: 150px;
 			  
 			}
+
+			/* Project Header Styling */
+.major h2 {
+    color: black;
+}
+
 			
 		  </style>
 		  </head>
 		  <body>
 			<!-- Navigation bar -->
-			<div class="navbar">
-			  <a href="index.html">Home</a>
-			  <a href="index.html#about">About</a>
-			  <div class="dropdown">
-				<a href="index.html#projects">Projects</a>
-				<div class="dropdown-content">
-				  <a href="SEDS.html">SEDS Rocketry</a>
-				  <a href="Research.html">GNC Research</a>
-				  <a href="EWB.html">Engineers Without Borders</a>
-				  <a href="ME10.html">Medieval Shield</a>
-				  <a href="ME20.html">Pull Up Exercise Bar FEA</a>
-				</div>
-			  </div>
-			  <a href="index.html#contact">Contact</a>
+			<!-- Navigation bar -->
+<div class="navbar">
+    <!-- Name on top left -->
+    <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
+        <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
+    </div>
+
+    <!-- Navigation links on right -->
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="dropdown">
+        <a href="#projects">Projects</a>
+        <div class="dropdown-content" style="color:#575757;">
+            <a href="SEDS.html">SEDS Rocketry</a>
+            <a href="ME10.html">Design/Manufacturing</a>
+            <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
+            <a href="EWB.html">Engineers Without Borders</a>
+            <a href="ME20.html">Simulations</a>
+            <a href="Research.html">Autonomous Vehicles Research</a>
+        </div>
+    </div>
+    <a href="index.html#contact">Contact</a>
+</div>
+
 			</div>
 		  </body>
 		<!-- Header -->
@@ -136,7 +159,7 @@
 						<!-- <p>Tufts Rocketry is a student-led organization dedicated to designing, building, and launching high-power rockets. In 2024, SEDS competed for the first time at the prestigious Spaceport America Cup in Las Cruces, New Mexico, placing 18th out of 68 teams in the 10k COTS category. I assisted the Mechanical Engineering team to design and manufacture the thrust plate, payload, avionics bay, and sled for our 12-foot SRAD solid-fuel rocket "CARM" and troubleshoot all components through FEA software, simulations, and test launches. 
 A few months later, I achieved my NAR L1 High Power Rocket Certification. After a fall semester spent designing, fabricating, and testing, I successfully launched a custom rocket with an H163 Cesaroni motor, an altimeter, and a Jolly Logic chute release using Onshape, a laser cut fin assembly, and a 3D printed nose cone. 
 </p> -->
-<p>Tufts Rocketry is a student-led organization dedicated to designing, building, and launching high-power team and personal rockets. In 2024, SEDS competed for the first time at the prestigious Spaceport America Cup in Las Cruces, New Mexico, placing 18th out of 68 teams in the 10k COTS category. As a member of the Mechanical Team, I helped design and manufacture the thrust plate, payload, avionics bay, and sled for our 12-foot SRAD solid-fuel rocket, CARM, and troubleshoot all components through FEA software, simulations, and test launches. We are currently designing a more efficient and improved 10-foot rocket, Hodge, for official competition in the Spaceport America Cup in June 2025.</p> 
+<p>Tufts Rocketry is a student-led organization dedicated to designing, manufacturing, and launching high-power team and personal rockets. In 2024, SEDS competed for the first time at the prestigious Spaceport America Cup in Las Cruces, New Mexico, placing 18th out of 68 teams in the 10k COTS category. As a member of the Mechanical Team, I helped design and manufacture the thrust plate, payload, avionics bay, and sled for our 12-foot solid-fuel rocket, CARM, and troubleshoot all components through FEA, simulations, and test launches. In 2025, we launched a more efficient and improved 10-foot rocket, Hodge, at the International Rocket Engineering Competition (IREC). We are currently designing our third team rocket, Kindlevan, which will incorporate airbrakes. </p> 
 <div style="display: flex; gap: 10px; margin-bottom: 20px;">
     <ul class="actions" style="margin: 0; padding: 0; list-style: none;">
         <li>
@@ -154,7 +177,7 @@ A few months later, I achieved my NAR L1 High Power Rocket Certification. After 
     </ul>
 </div>
 
-<p>In addition, I also built a personal custom rocket. This fall, I set out to achieve my NAR L1 High Power Rocket Certification. During the design, I selected an H163 Cesaroni motor due to its reliability and after hearing numerous cautionary tales from my teammates about other motors. I used OpenRocket for the design and simulations, modeled the fin assembly and nose cone in Onshape, fabricated the fin assembly with a laser cutter, and created the nose cone using a 3D printer. Initially, the nose cone was too small for the body tube. This would likely cause the rocket to separate prematurely during launch. Instead of printing an entirely new one, I wrapped it in duct tape until it fit snugly inside the tube. I used an altimeter to gather flight data and a Jolly Logic chute release to bundle the parachute. On launch day, we woke up at 4 a.m. and drove three hours to St. Albans, Vermont. It was a brisk day with practically no wind. The launch was a success! I am currently working on achieving my L2 Certification this spring.</p>
+<p>In addition, I also built a personal custom rocket, achieving my NAR L1 High Power Rocket Certification. During the design, I selected an H163 Cesaroni motor due to its reliability and after hearing numerous cautionary tales from my teammates about other motors. I used OpenRocket for the design and simulations, modeled the fin assembly and nose cone in SolidWorks, fabricated the fin assembly with a laser cutter, and created the nose cone using a 3D printer. I used an altimeter to gather flight data and a Jolly Logic chute release to bundle the parachute. On launch day, we woke up at 4 a.m. and drove three hours to St. Albans, Vermont. It was a brisk day with practically no wind. The launch was a success! I am currently working on achieving my L2 Certification.</p>
 						<ul class="actions">
 							<li><a href="https://sedstufts.org/" class="button">SEDS Website</a></li>
 						</ul>
@@ -168,7 +191,7 @@ A few months later, I achieved my NAR L1 High Power Rocket Certification. After 
 							<hr style="border: 1.115px solid #a9a8a83b; width: 100%; margin: 15px 0;" />
 
 <div style="text-align: center; font-size: 2em; margin: 30px 0; width: 100%; display: block; color: #828080;">
-    Team Rocket
+    2024 Team Rocket - C.A.R.M
 </div>
 
 <article class="col-6 col-12-xsmall work-item">
@@ -199,6 +222,36 @@ A few months later, I achieved my NAR L1 High Power Rocket Certification. After 
     <a href="images/ThrustPlate2.png" class="image fit"><img src="images/ThrustPlate2.png" alt="" /></a>
     <h3>Thrust Plate</h3>
    
+</article>
+
+<hr style="border: 1.115px solid #a9a8a83b; width: 100%; margin: 15px 0;" />
+
+<div style="text-align: center; font-size: 2em; margin: 30px 0; width: 100%; display: block; color: #828080;">
+    2025 Team Rocket - H.O.D.G.E
+</div>
+
+<article class="col-6 col-12-xsmall work-item">
+    <a href="images/HodgeLaunched.jpg" class="image fit"><img src="images/HodgeLaunched.jpg" alt="" /></a>
+    <h3>IREC Launch</h3>
+    
+</article>
+
+<article class="col-6 col-12-xsmall work-item">
+    <a href="Hodge.jpg" class="image fit"><img src="images/Hodge.jpg" alt="" /></a>
+    <h3>Fully Integrated</h3>
+    
+</article>
+
+<article class="col-6 col-12-xsmall work-item">
+    <a href="HodgeTable.jpg" class="image fit"><img src="images/HodgeTable.jpg" alt="" /></a>
+    <h3>On Display at Conference</h3>
+    
+</article>
+
+<article class="col-6 col-12-xsmall work-item">
+    <a href="HodgeOutsideTable.jpg" class="image fit"><img src="images/HodgeOutsideTable.jpg" alt="" /></a>
+    <h3>Pre-Launch Integration</h3>
+    
 </article>
 
 <hr style="border: 1.115px solid #a9a8a83b; width: 100%; margin: 15px 0;" />

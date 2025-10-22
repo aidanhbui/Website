@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>About</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+		/* Navbar styling */
+		.navbar {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center; /* ensures vertical alignment */
+			background-color: rgba(51, 51, 51, 0.428);
+			padding: 1em;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 10;
+			gap: 0.5em;
+			padding-right: 6em;
+		}
+
+		.navbar a {
+			color: rgb(255, 255, 255);
+			text-decoration: none;
+			border: none;
+			padding: 0.5em 0.8em;
+			position: relative;
+			font-size: 1.2em;
+			display: flex;
+			align-items: center;
+		}
+
+		.navbar a:hover {
+			background-color: #33333300;
+			border-radius: 4px;
+		}
+
+		.dropdown {
+			position: relative;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #333333;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+			border-radius: 4px;
+			min-width: 167px;
+			margin-top: 0.01em;
+		}
+
+		.dropdown-content a {
+			color: white;
+			padding: 0.5em;
+			text-decoration: none;
+			display: block;
+		}
+
+		.dropdown-content a:hover {
+			background-color: #575757;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		#header {
+			background-image: url('images/NASAHeader.png');
+			background-size: cover;
+			background-position: center;
+			height: 100vh;
+			position: relative;
+		}
+
+		.inner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			color: white;
+		}
+
+		.inner .image.avatar img {
+			border-radius: 50%;
+			max-width: 150px;
+		}
+
+		/* About Me section layout */
+		.about-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 3em;
+			padding: 4em 2em;
+			flex-wrap: wrap;
+		}
+
+		.about-image {
+			flex: 0.8;
+			min-width: 260px;
+			max-width: 380px;
+		}
+
+		.about-image img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			border-radius: 10px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+			transform: scale(0.93);
+		}
+
+		.about-text {
+			flex: 1.2;
+			color: #333;
+			min-width: 300px;
+			max-width: 700px;
+		}
+
+		.about-text h2 {
+			color: black;
+			font-size: 2em;
+			margin-bottom: 1em;
+		}
+
+		.about-text p {
+			margin-bottom: 1.2em;
+			line-height: 1.6em;
+		}
+
+		/* Carousel container */
+		.carousel-container {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			padding: 3em 0;
+			background: #fafafa;
+		}
+
+		.carousel-track {
+			display: flex;
+			width: calc(400px * 32); /* 32 images total */
+			animation: scroll 50s linear infinite;
+		}
+
+		.carousel-track img {
+			width: 400px;
+			height: 300px;
+			object-fit: cover;
+			margin-right: 2em;
+			border-radius: 14px;
+			box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.carousel-track img:hover {
+			transform: scale(1.05);
+			box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+		}
+
+		/* Infinite scroll animation */
+		@keyframes scroll {
+			0% { transform: translateX(0); }
+			100% { transform: translateX(-50%); }
+		}
+
+		@media (max-width: 900px) {
+			.carousel-track img {
+				width: 280px;
+				height: 210px;
+			}
+			.carousel-track {
+				animation-duration: 60s;
+			}
+		}
+
+		/* Lightbox overlay */
+		#lightbox {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.85);
+			z-index: 1000;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#lightbox img {
+			max-width: 90%;
+			max-height: 90%;
+			border-radius: 10px;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+		}
+	</style>
+</head>
+
+<body class="is-preload">
+	<!-- Navigation bar -->
+	<div class="navbar">
+		<!-- Name on top left -->
+		<div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
+			<a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
+		</div>
+
+		<!-- Navigation links -->
+		<a href="index.html">Home</a>
+		<a href="about.html">About</a>
+		<div class="dropdown">
+			<a href="#projects">Projects</a>
+			<div class="dropdown-content" style="color:#575757;">
+				<a href="SEDS.html">SEDS Rocketry</a>
+				<a href="ME10.html">Design/Manufacturing</a>
+				<a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
+				<a href="EWB.html">Engineers Without Borders</a>
+				<a href="ME20.html">Simulations</a>
+				<a href="Research.html">Autonomous Vehicles Research</a>
+			</div>
+		</div>
+		<a href="index.html#contact">Contact</a>
+	</div>
+
+	<!-- Main -->
+	<div id="main">
+		<section id="one">
+			<div class="about-container">
+				<div class="about-image">
+					<img src="images/AidanBoat.jpg" alt="Aidan in a boat">
+				</div>
+				<div class="about-text">
+					<h2>About Me</h2>
+					<p>
+I’ve always been drawn to how things work, from taking apart small gadgets as a kid to designing complete systems as a mechanical engineering student at Tufts. Over time, that curiosity evolved into my passion for mechanical design and mechatronics, where I get to bring hardware, software, and manufacturing together to create real, functional products.					</p>
+					<p>
+I’m excited about the intersection of design, technology, and user experience, especially where engineering can make products more intuitive, accessible, or meaningful in people’s lives. Whether it’s in tech, health, or manufacturing, I’m motivated by the impact well-designed hardware can have on the world around us.					</p>
+					<p>
+Outside the lab, I stay active through Club Water Polo, intramural basketball, and distance running. I love meeting new people and spending as much time outdoors as possible, whether that's going to the beach with friends and family or taking my dog on hikes in Vermont.					</p>
+				</div>
+			</div>
+
+			<!-- Auto-scrolling Carousel -->
+			<div class="carousel-container" id="carouselContainer">
+				<div class="carousel-track" id="carouselTrack">
+					<img src="images/NY.jpg" alt="Gallery image 1">
+					<img src="images/L1.jpg" alt="Gallery image 2">
+					<img src="images/Running!.jpg" alt="Gallery image 3">
+					<img src="images/NATALIE.jpg" alt="Gallery image 4">
+					<img src="images/Chess.JPEG" alt="Gallery image 5">
+					<img src="images/Paris.jpg" alt="Gallery image 6">
+					<img src="images\1111111111111.jpg" alt="Gallery image 7">
+					<img src="images\2222222222.jpg" alt="Gallery image 8">
+					<img src="images\3333333333.jpg" alt="Gallery image 9">
+					<img src="images\4444444444444.jpg" alt="Gallery image 10">
+					<img src="images\555555555.jpg" alt="Gallery image 11">
+					<img src="images\6666666666heic.jpg" alt="Gallery image 12">
+					<img src="images\77777777777.jpg" alt="Gallery image 13">
+					<img src="images\8888888.jpg" alt="Gallery image 14">
+					<img src="images/999999999999.JPEG" alt="Gallery image 15">
+					<img src="images\10000000.jpg" alt="Gallery image 16">
+					<!-- Duplicate set for seamless infinite scroll -->
+					<img src="images/NY.jpg" alt="Gallery image 1">
+					<img src="images/L1.jpg" alt="Gallery image 2">
+					<img src="images/Running!.jpg" alt="Gallery image 3">
+					<img src="images/NATALIE.jpg" alt="Gallery image 4">
+					<img src="images/Chess.JPEG" alt="Gallery image 5">
+					<img src="images/Paris.jpg" alt="Gallery image 6">
+					<img src="images\1111111111111.jpg" alt="Gallery image 7">
+					<img src="images\2222222222.jpg" alt="Gallery image 8">
+					<img src="images\3333333333.jpg" alt="Gallery image 9">
+					<img src="images\4444444444444.jpg" alt="Gallery image 10">
+					<img src="images\555555555.jpg" alt="Gallery image 11">
+					<img src="images\6666666666heic.jpg" alt="Gallery image 12">
+					<img src="images\77777777777.jpg" alt="Gallery image 13">
+					<img src="images\8888888.jpg" alt="Gallery image 14">
+					<img src="images\999999999999.JPEG" alt="Gallery image 15">
+					<img src="images\10000000.jpg" alt="Gallery image 16">
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- Lightbox overlay -->
+	<div id="lightbox">
+		<img src="" alt="Expanded gallery image">
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- Lightbox functionality -->
+	<script>
+		const lightbox = document.getElementById('lightbox');
+		const lightboxImg = lightbox.querySelector('img');
+		const carouselImages = document.querySelectorAll('.carousel-track img');
+
+		carouselImages.forEach(img => {
+			img.addEventListener('click', () => {
+				lightbox.style.display = 'flex';
+				lightboxImg.src = img.src;
+			});
+		});
+
+		lightbox.addEventListener('click', () => {
+			lightbox.style.display = 'none';
+		});
+	</script>
+</body>
+</html>
