@@ -11,23 +11,23 @@
 
   <style>
     /* Navbar styling */
-     .navbar {
-    display: flex;
-    justify-content: flex-start; /* allow left/right spacing via margin auto */
-    align-items: center;
-	background-color: rgba(51, 51, 51, 0.428);
-    padding: 1em;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    gap: 0.5em;
-    padding-right: 6em;
-}
+    .navbar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: rgba(51, 51, 51, 0.428);
+      padding: 1em;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      gap: 0.5em;
+      padding-right: 6em;
+    }
 
-.major {
-    margin-top: 40px; /* Adjust the value to how much space you want */
-}
+    .major {
+      margin-top: 40px;
+    }
 
     .navbar a {
       color: white;
@@ -104,6 +104,12 @@
       border-radius: 8px;
     }
 
+    /* Special rule for the laser cutting image so the full image fits */
+    .work-item img.laser-cut {
+      object-fit: contain;
+      background-color: #f3f3f3;
+    }
+
     .work-item img.second-image {
       object-fit: contain;
       background-color: #f3f3f3;
@@ -124,6 +130,10 @@
 
     .col-6 {
       flex: 1 1 calc(50% - 20px);
+    }
+
+    .col-12 {
+      flex: 1 1 100%;
     }
 
     @media (max-width: 768px) {
@@ -214,29 +224,27 @@
 <body class="is-preload">
 
   <!-- Navigation bar -->
-<div class="navbar">
-    <!-- Name on top left -->
+  <div class="navbar">
     <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
-        <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
+      <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
     </div>
 
-    <!-- Navigation links on right -->
     <a href="index.html">Home</a>
     <a href="About.html">About</a>
     <div class="dropdown">
-        <a href="index.html#projects">Projects</a>
-
-        <div class="dropdown-content" style="color:#575757;">
-            <a href="SEDS.html">SEDS Rocketry</a>
-            <a href="ME10.html">Design/Manufacturing</a>
-            <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
-            <a href="EWB.html">Engineers Without Borders</a>
-            <a href="ME20.html">Simulations</a>
-            <a href="Research.html">Autonomous Vehicles Research</a>
-        </div>
+      <a href="index.html#projects">Projects</a>
+      <div class="dropdown-content" style="color:#575757;">
+        <a href="SEDS.html">SEDS Rocketry</a>
+        <a href="ME10.html">Design/Manufacturing</a>
+        <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
+        <a href="EWB.html">Engineers Without Borders</a>
+        <a href="ME20.html">Simulations</a>
+        <a href="Research.html">Autonomous Vehicles Research</a>
+      </div>
     </div>
     <a href="index.html#contact">Contact</a>
-</div>
+  </div>
+
   <!-- Main -->
   <div id="main">
 
@@ -247,7 +255,7 @@
       </header>
 
       <p>
-        <span style="font-weight:bold; color:black;">Project:</span> During the summer of 2025, I took my growing passion
+        During the summer of 2025, I took my growing passion
         for self-driving cars and designed and built a 1:10-scale autonomous vehicle powered by an NVIDIA Jetson Nano as
         a personal passion project. I developed a custom chassis and motor control system, integrating ultrasonic sensors,
         IMU fusion, and a camera-based perception system to enable real-time 360° localization in dynamic environments.
@@ -256,20 +264,34 @@
         frames for lane detection and obstacle avoidance, then deployed the model with CUDA-accelerated OpenCV
         preprocessing—achieving roughly 90% accuracy on test track evaluations.
       </p>
-
-      <!-- <p>
-        <span style="font-weight:bold; color:black;">Takeaways:</span> Improved understanding of embedded systems, real-time data processing, and cross-disciplinary problem-solving.
-      </p> -->
     </section>
 
     <!-- Section Two -->
     <section id="two">
       <div class="row">
+        
+        <article class="col-6 work-item">
+          <div class="image fit">
+            <video controls autoplay muted loop>
+              <source src="images/IMG_3671.mov" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3>Jetson Nano Vehicle in Action</h3>
+        </article>
+		
         <article class="col-6 work-item">
           <a href="images/JetsonAngle.jpg" class="image fit">
             <img src="images/JetsonAngle.jpg" alt="Jetson Angle" style="object-fit: cover; object-position: center -250px;" />
           </a>
           <h3>My Jetson Self-Driving Car</h3>
+        </article>
+
+        <article class="col-6 work-item">
+          <a href="images/JetsonSideSide.jpg" class="image fit">
+            <img src="images/JetsonSideSide.jpg" alt="Side View" class="second-image" />
+          </a>
+          <h3>Side View</h3>
         </article>
 
         <article class="col-6 work-item">
@@ -287,17 +309,6 @@
         </article>
 
         <article class="col-6 work-item">
-          <div class="image fit">
-            <video controls autoplay muted loop>
-              <source src="images/IMG_3671.mov" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <h3>Jetson Nano Vehicle in Action</h3>
-        </article>
-
-        <!-- Last two chassis images side by side -->
-        <article class="col-6 work-item">
           <a href="images/Chassis.png" class="image fit">
             <img src="images/Chassis.png" alt="Chassis 1" />
           </a>
@@ -305,11 +316,34 @@
         </article>
 
         <article class="col-6 work-item">
-          <a href="images\FEAchassis.png" class="image fit">
-            <img src="images\FEAchassis.png" alt="FEA Chassis" />
+          <a href="images/FEAchassis.png" class="image fit">
+            <img src="images/FEAchassis.png" alt="FEA Chassis" />
           </a>
           <h3>Chassis Stress Testing FEA</h3>
         </article>
+
+        <!-- Laser cutting chassis image (shows full image in same container) -->
+        <article class="col-6 work-item">
+          <a href="images/ChassisLaserCut1.jpg" class="image fit">
+            <img src="images/ChassisLaserCut1.jpg" alt="Laser Cutting Chassis" class="laser-cut" />
+          </a>
+          <h3>Laser Cutting Chassis</h3>
+        </article>
+
+        <article class="col-6 work-item">
+          <a href="images/ChassisAcrylicSide.jpg" class="image fit">
+            <img src="images/ChassisAcrylicSide.jpg" alt="Camera Calibration Setup" />
+          </a>
+          <h3>Laser Cutting Complete</h3>
+        </article>
+
+        <article class="col-6 work-item">
+          <a href="images/ChassisMatteSide.jpg" class="image fit">
+            <img src="images/ChassisMatteSide.jpg" alt="Final Assembly Back" />
+          </a>
+          <h3>Finished Chassis</h3>
+        </article>
+
       </div>
     </section>
 
@@ -339,7 +373,7 @@
             <div class="swiper-slide-label">L298N Motor Driver</div>
           </div>
           <div class="swiper-slide">
-            <img src="images\Screen.jpg" alt="OLED Display" />
+            <img src="images/Screen.jpg" alt="OLED Display" />
             <div class="swiper-slide-label">OLED Display</div>
           </div>
         </div>
