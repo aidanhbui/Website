@@ -12,18 +12,18 @@
     <style>
         /* Navbar styling */
         .navbar {
-    display: flex;
-    justify-content: flex-start; /* allow left/right spacing via margin auto */
-    align-items: center;
-	background-color: rgba(51, 51, 51, 0.428);
-    padding: 1em;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    gap: 0.5em;
-    padding-right: 6em;
-}
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.428);
+            padding: 1em;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            gap: 0.5em;
+            padding-right: 6em;
+        }
 
         .navbar a {
             color: rgb(255, 255, 255);
@@ -41,11 +41,8 @@
             border-radius: 4px;
         }
 
-        /* Dropdown menu styling */
-        .dropdown {
-            position: relative;
-        }
-
+        /* Dropdown */
+        .dropdown { position: relative; }
         .dropdown-content {
             display: none;
             position: absolute;
@@ -56,23 +53,16 @@
             min-width: 167px;
             margin-top: 0.01em;
         }
-
         .dropdown-content a {
             color: white;
             padding: 0.5em;
             text-decoration: none;
             display: block;
         }
+        .dropdown-content a:hover { background-color: #575757; }
+        .dropdown:hover .dropdown-content { display: block; }
 
-        .dropdown-content a:hover {
-            background-color: #575757;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Header styling */
+        /* Header */
         #header {
             background-image: url('images/NASAHeader.png');
             background-size: cover;
@@ -95,11 +85,8 @@
             max-width: 150px;
         }
 
-		.major {
-    margin-top: 40px; /* Adjust the value to how much space you want */
-}
+        .major { margin-top: 40px; }
 
-        /* Project Header Styling */
         .major h2 {
             color: black;
         }
@@ -118,19 +105,33 @@
             transition: opacity 0.3s;
         }
 
-        .swiper-slide img {
+        .swiper-slide img,
+        .swiper-slide video {
             max-width: 100%;
             max-height: 100%;
             border-radius: 7.5px;
             object-fit: contain;
             cursor: pointer;
+            display: block;
         }
 
         .swiper-slide:not(.swiper-slide-active) {
             opacity: 0.4;
         }
 
-        /* Lightbox styling */
+        /* Consistent slide spacing ONLY for Water Gun slider */
+.mySwiperWaterGun .swiper-slide {
+    padding: 12px 0; /* even top/bottom spacing for all slides */
+}
+
+.mySwiperWaterGun .swiper-slide img,
+.mySwiperWaterGun .swiper-slide video {
+    display: block;
+    width: 100%;
+}
+
+
+        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -150,9 +151,7 @@
             border-radius: 10px;
         }
 
-        .lightbox.show {
-            display: flex;
-        }
+        .lightbox.show { display: flex; }
 
         .lightbox-close {
             position: absolute;
@@ -167,20 +166,19 @@
 </head>
 
 <body class="is-preload">
-    <!-- Navigation bar -->
-   <div class="navbar">
-    <!-- Name on top left -->
+
+<!-- NAVBAR -->
+<div class="navbar">
     <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
         <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
     </div>
 
-    <!-- Navigation links on right -->
     <a href="index.html">Home</a>
     <a href="About.html">About</a>
-    <div class="dropdown">
-       <a href="index.html#projects">Projects</a>
 
-        <div class="dropdown-content" style="color:#575757;">
+    <div class="dropdown">
+        <a href="index.html#projects">Projects</a>
+        <div class="dropdown-content">
             <a href="SEDS.html">SEDS Rocketry</a>
             <a href="ME10.html">Design/Manufacturing</a>
             <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
@@ -189,191 +187,243 @@
             <a href="Research.html">Autonomous Vehicles Research</a>
         </div>
     </div>
+
     <a href="index.html#contact">Contact</a>
 </div>
 
-    <!-- Main -->
-    <div id="main">
-        <!-- Medieval Shield Section -->
-        <section id="one">
-            <header class="major">
-                <h2>Medieval Shield</h2>
-            </header>
-            <p>
-The aim of this project was to design and fabricate a scaled, functional, and aesthetically pleasing medieval-style shield using sheet metal. Applying a variety of manufacturing techniques, including cutting, shaping, and assembling sheet metal, we worked with 2mm-thick aluminum sheets to gain a deeper understanding of material properties such as malleability, ductility, and strength. We quickly found out that while electric hand shears could cut straight lines, we needed a more powerful tool for cutting the shield's curves. The vertical band saw proved perfect. We also used a bead roller and an English wheel to bend and deform the metal, smoothing scratches with a dremel and buffing wheel to enhance the surface finish. Rivets were used for handles to ensure strength. Combining these techniques with teamwork, we successfully created a polished shield that is comfortable, light, yet durable.            </p>
-        </section>
 
-        <!-- Shield Slider -->
-        <section>
-            <div class="swiper mySwiperShield">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/BandSaw.JPG" alt="Vertical Bandsaw" /></div>
-                    <div class="swiper-slide"><img src="images/EnglishWheel.PNG" alt="English Wheel" /></div>
-                    <div class="swiper-slide"><img src="images/BeadRoller.JPG" alt="Bead Roller" /></div>
-                    <div class="swiper-slide"><img src="images/Bending.JPG" alt="Bending" /></div>
-                    <div class="swiper-slide"><img src="images/Grinding.JPG" alt="Grinding" /></div>
-                    <div class="swiper-slide"><img src="images/Rivets.JPG" alt="Riveting" /></div>
-                </div>
-                <div class="swiper-pagination swiper-pagination-shield"></div>
-                <div class="swiper-button-next swiper-button-next-shield"></div>
-                <div class="swiper-button-prev swiper-button-prev-shield"></div>
+<!-- MAIN CONTENT -->
+<div id="main">
+
+    <!-- Medieval Shield -->
+    <section id="one">
+        <header class="major">
+            <h2>Medieval Shield</h2>
+        </header>
+        <p>The aim of this project was to design and fabricate a scaled, functional, and aesthetically pleasing medieval-style shield using sheet metal. Applying a variety of manufacturing techniques, including cutting, shaping, and assembling sheet metal, we worked with 2mm-thick aluminum sheets to gain a deeper understanding of material properties such as malleability, ductility, and strength. We quickly found out that while electric hand shears could cut straight lines, we needed a more powerful tool for cutting the shield's curves. The vertical band saw proved perfect. We also used a bead roller and an English wheel to bend and deform the metal, smoothing scratches with a dremel and buffing wheel to enhance the surface finish. Rivets were used for handles to ensure strength. Combining these techniques with teamwork, we successfully created a polished shield that is comfortable, light, yet durable.</p>
+    </section>
+
+    <!-- Shield Slider -->
+    <section>
+        <div class="swiper mySwiperShield">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/BandSaw.JPG"></div>
+                <div class="swiper-slide"><img src="images/EnglishWheel.PNG"></div>
+                <div class="swiper-slide"><img src="images/BeadRoller.JPG"></div>
+                <div class="swiper-slide"><img src="images/Bending.JPG"></div>
+                <div class="swiper-slide"><img src="images/Grinding.JPG"></div>
+                <div class="swiper-slide"><img src="images/Rivets.JPG"></div>
             </div>
-        </section>
+            <div class="swiper-pagination swiper-pagination-shield"></div>
+            <div class="swiper-button-next swiper-button-next-shield"></div>
+            <div class="swiper-button-prev swiper-button-prev-shield"></div>
+        </div>
+    </section>
 
-        <!-- Atlas Section -->
-        <section id="three">
-            <header class="major">
-                <h2>Atlas</h2>
-            </header>
-            <p>
-My work at Atlas focused on designing and fabricating automated sensor hardware systems. I worked during summer 2025 as a mechanical design engineering intern, designing and fabricating electronics housings and mounts using CAD and FEA. I owned two projects: a smart tower garden for schools and homes, and devices for scalable crop health monitoring in multi-acre plots for farmers. I also tested aluminum-filled polymers and thermally conductive plastics to optimize thermal management in housings.            </p>
-        </section>
+    <!-- Atlas Section -->
+    <section id="three">
+        <header class="major">
+            <h2>Atlas</h2>
+        </header>
+        <p>My work at Atlas focused on designing and fabricating automated sensor hardware systems. I worked during summer 2025 as a mechanical design engineering intern, designing and fabricating electronics housings and mounts using CAD and FEA. I owned two projects: a smart tower garden for schools and homes, and devices for scalable crop health monitoring in multi-acre plots for farmers. I also tested aluminum-filled polymers and thermally conductive plastics to optimize thermal management in housings.</p>
+    </section>
 
-        <!-- Atlas Slider -->
-        <section>
-            <div class="swiper mySwiperShield">
-                <div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="images\CaseCAD.png" alt="Resin" /></div>
-					<div class="swiper-slide"><img src="images\Case2.jpg" alt="Resin" /></div>
-					<div class="swiper-slide"><img src="images\Case4.jpg" alt="Resin" /></div>
-                    <div class="swiper-slide"><img src="images/AtlasTower.png" alt="Atlas Tower" /></div>
-                    <div class="swiper-slide"><img src="images/LightSupport2.png" alt="Light Support" /></div>
-					<div class="swiper-slide"><img src="images\ARMThermal.png" alt="Light Support" /></div>
-                    <div class="swiper-slide"><img src="images/Box.png" alt="Box" /></div>
-					<div class="swiper-slide"><img src="images\ThermalCasing.png" alt="Box" /></div>
-                    <div class="swiper-slide"><img src="images/AcrylicAtlas.png" alt="Acrylic Atlas" /></div>
-                    <div class="swiper-slide"><img src="images/Resin.png" alt="Resin" /></div>
-					<div class="swiper-slide"><img src="images\InjectionMold.JPG" alt="Resin" /></div>			
-					
-                </div>
-                <div class="swiper-pagination swiper-pagination-shield"></div>
-                <div class="swiper-button-next swiper-button-next-shield"></div>
-                <div class="swiper-button-prev swiper-button-prev-shield"></div>
+    <!-- Atlas Slider -->
+    <section>
+        <div class="swiper mySwiperShield">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/CaseCAD.png"></div>
+                <div class="swiper-slide"><img src="images/Case2.jpg"></div>
+                <div class="swiper-slide"><img src="images/Case4.jpg"></div>
+                <div class="swiper-slide"><img src="images/Screenshot 2025-12-07 171150.png"></div>
+                <div class="swiper-slide"><img src="images/Thermcase.jpg"></div>
+                <div class="swiper-slide"><img src="images/AtlasTower.png"></div>
+                <div class="swiper-slide"><img src="images/LightSupport2.png"></div>
+                <div class="swiper-slide"><img src="images/ARMThermal.png"></div>
+                <div class="swiper-slide"><img src="images/Box.png"></div>
+                <div class="swiper-slide"><img src="images/ThermalCasing.png"></div>
+                <div class="swiper-slide"><img src="images/AcrylicAtlas.png"></div>
+                <div class="swiper-slide"><img src="images/Resin.png"></div>
+                <div class="swiper-slide"><img src="images/InjectionMold.JPG"></div>
             </div>
-        </section>
+            <div class="swiper-pagination swiper-pagination-shield"></div>
+            <div class="swiper-button-next swiper-button-next-shield"></div>
+            <div class="swiper-button-prev swiper-button-prev-shield"></div>
+        </div>
+    </section>
 
-        <!-- Guiding Hands Section -->
-        <section id="four">
-            <header class="major">
-                <h2>Guiding Hands</h2>
-            </header>
-            <p>
-                Guiding Hands is a collaborative assistive technology project aimed at improving accessibility and independence for individuals with limited hand mobility, specifically those with Cerebral Palsy. This project involved rapid prototyping, precision mechanical assembly, and ergonomic testing. Our team collaborated closely with an individual with Cerebral Palsy who wanted to build LEGO sets more easily. We developed a comfortable, low-cost device using metalworking and fabrication techniques that translate subtle wrist and arm motions into fine motor control. We gifted the final prototype to the individual with Cerebral Palsy for further testing and Lego building.
-            </p>
-        </section>
+<!-- WATER GUN SECTION -->
+    <section id="watergun">
+        <header class="major">
+            <h2>Autonomous Water Gun Turret</h2>
+        </header>
+        <p>This project was developed for my Electronics and Controls course, where we were challenged to design an interactive game using a KB2040 microcontroller, motors, and various electronic components. I built an autonomous water-gun tracking turret that uses ultrasonic sensors to detect a target, spin toward it, and fire! The system was rapidly prototyped using 3D-printed parts, laser-cut acrylic, and custom-cut 80/20 aluminum supports.</p>
 
-        <!-- Guiding Hands Slider -->
-        <section>
-            <div class="swiper mySwiperShield">
-                <div class="swiper-wrapper">
-					 <div class="swiper-slide"><img src="images\N3.jpg" alt="Guiding Hands Prototype 2" /></div>
-					 <div class="swiper-slide"><img src="images\N2.jpg" alt="Guiding Hands Prototype 1" /></div>
-					 <div class="swiper-slide"><img src="images\HandGuidedHand.png" alt="Guiding Hands Prototype 1" /></div>
-					 <div class="swiper-slide"><img src="images\MeDrilling.jpg" alt="Guiding Hands Assembly" /></div>
-					 <div class="swiper-slide"><img src="images\MeGrounding.jpg" alt="Guiding Hands Assembly" /></div>
-					 <div class="swiper-slide"><img src="images\Lathe.jpg" alt="Guiding Hands Assembly" /></div>
-					 <div class="swiper-slide"><img src="images\N6.jpg" alt="Guiding Hands CAD" /></div>              
-                     <div class="swiper-slide"><img src="images\N1.jpg" alt="Guiding Hands Prototype 1" /></div>					 
-					 <div class="swiper-slide"><img src="images\N5.jpg" alt="Guiding Hands Mechanism" /></div>
-                     <div class="swiper-slide"><img src="images\N4.jpg" alt="Guiding Hands Mechanism" /></div>
-                     <div class="swiper-slide"><img src="images\NATALIE.jpg" alt="Guiding Hands Assembly" /></div>
-					 
-					 <div class="swiper-slide"><img src="images\NataliePoster.jpg" alt="Guiding Hands Assembly" /></div>
-					 <div class="swiper-slide"><img src="images\Gary.JPEG" alt="Guiding Hands Assembly" /></div>
-                </div>
-                <div class="swiper-pagination swiper-pagination-shield"></div>
-                <div class="swiper-button-next swiper-button-next-shield"></div>
-                <div class="swiper-button-prev swiper-button-prev-shield"></div>
+        <p>To actuate the water stream, I integrated a real water gun from home and designed a mechanical trigger-pulling mechanism driven by a motor, a piece of high-tension string, and a custom 3D-printed motor hub. The final build demonstrated reliable tracking, smooth rotation, and consistent trigger actuation, all while showcasing fast iteration and creative electromechanical design.</p>
+    </section>
+
+    <!-- WATER GUN SLIDER WITH AUTOPLAY REMOVED -->
+    <section>
+        <div class="swiper mySwiperWaterGun">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/EC6.jpg"></div>
+                <div class="swiper-slide"><video src="images/EC7.mov" controls muted loop playsinline></video></div>
+                <div class="swiper-slide"><img src="images/EC3.jpg"></div>
+                <div class="swiper-slide"><img src="images/EC4.jpg"></div>
+                <div class="swiper-slide"><img src="images/EC1.jpg"></div>
+                <div class="swiper-slide"><img src="images/EC5.jpg"></div>
+                <div class="swiper-slide"><img src="images/EC2.jpg"></div>
             </div>
-        </section>
 
-        <!-- CAD Section -->
-        <section id="five">
-            <header class="major">
-                <h2>More CAD Designs</h2>
-            </header>
-            <p>
-A collection of additional CAD designs showcasing complex assemblies, detailed mechanical components, and experimental prototypes. These models highlight precision design work and iterative prototyping across academic and personal projects.            </p>
-        </section>
+            <div class="swiper-pagination swiper-pagination-shield"></div>
+            <div class="swiper-button-next swiper-button-next-shield"></div>
+            <div class="swiper-button-prev swiper-button-prev-shield"></div>
+        </div>
+    </section>
 
-        <!-- CAD Slider -->
-        <section>
-            <div class="swiper mySwiperShield">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/Teardown.png" alt="Teardown" /></div>
-                    <div class="swiper-slide"><img src="images/Teardown2.png" alt="Teardown 2" /></div>
-                    <div class="swiper-slide"><img src="images/Juicer.png" alt="Juicer" /></div>
-                    <div class="swiper-slide"><img src="images/Hair Drier.png" alt="Hair Drier" /></div>
-                    <div class="swiper-slide"><img src="images/Blender.png" alt="Blender" /></div>
-                    <div class="swiper-slide"><img src="images/Teardown3.png" alt="Teardown Repeat" /></div>
-                </div>
-                <div class="swiper-pagination swiper-pagination-shield"></div>
-                <div class="swiper-button-next swiper-button-next-shield"></div>
-                <div class="swiper-button-prev swiper-button-prev-shield"></div>
+
+    <!-- Guiding Hands Section -->
+    <section id="four">
+        <header class="major">
+            <h2>Guiding Hands</h2>
+        </header>
+        <p>Guiding Hands is a collaborative assistive technology project aimed at improving accessibility and independence for individuals with limited hand mobility, specifically those with Cerebral Palsy. This project involved rapid prototyping, precision mechanical assembly, and ergonomic testing. Our team collaborated closely with an individual with Cerebral Palsy who wanted to build LEGO sets more easily. We developed a comfortable, low-cost device using metalworking and fabrication techniques that translate subtle wrist and arm motions into fine motor control. We gifted the final prototype to the individual with Cerebral Palsy for further testing and Lego building.</p>
+    </section>
+
+    <!-- Guiding Hands Slider -->
+    <section>
+        <div class="swiper mySwiperShield">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/N3.jpg"></div>
+                <div class="swiper-slide"><img src="images/N2.jpg"></div>
+                <div class="swiper-slide"><img src="images/HandGuidedHand.png"></div>
+                <div class="swiper-slide"><img src="images/MeDrilling.jpg"></div>
+                <div class="swiper-slide"><img src="images/MeGrounding.jpg"></div>
+                <div class="swiper-slide"><img src="images/Lathe.jpg"></div>
+                <div class="swiper-slide"><img src="images/N6.jpg"></div>
+                <div class="swiper-slide"><img src="images/N1.jpg"></div>
+                <div class="swiper-slide"><img src="images/N5.jpg"></div>
+                <div class="swiper-slide"><img src="images/N4.jpg"></div>
+                <div class="swiper-slide"><img src="images/NATALIE.jpg"></div>
+                <div class="swiper-slide"><img src="images/NataliePoster.jpg"></div>
+                <div class="swiper-slide"><img src="images/Gary.JPEG"></div>
             </div>
-        </section>
-    </div>
+            <div class="swiper-pagination swiper-pagination-shield"></div>
+            <div class="swiper-button-next swiper-button-next-shield"></div>
+            <div class="swiper-button-prev swiper-button-prev-shield"></div>
+        </div>
+    </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img id="lightboxImg" src="" alt="">
-    </div>
+    
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- CAD Section -->
+    <section id="five">
+        <header class="major">
+            <h2>More CAD Designs</h2>
+        </header>
+        <p>A collection of additional CAD designs showcasing complex assemblies, detailed mechanical components, and experimental prototypes. These models highlight precision design work and iterative prototyping across academic and personal projects.</p>
+    </section>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        // Common Swiper setup
-        function createSwiper(containerClass, nextBtn, prevBtn, paginationClass) {
-            return new Swiper(containerClass, {
-                loop: true,
-                spaceBetween: 1,
-                slidesPerView: 2.5,
-                centeredSlides: true,
-                pagination: {
-                    el: paginationClass,
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: nextBtn,
-                    prevEl: prevBtn,
-                },
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-            });
-        }
+    <!-- CAD Slider -->
+    <section>
+        <div class="swiper mySwiperShield">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Teardown.png"></div>
+                <div class="swiper-slide"><img src="images/Teardown2.png"></div>
+                <div class="swiper-slide"><img src="images/Juicer.png"></div>
+                <div class="swiper-slide"><img src="images/Hair Drier.png"></div>
+                <div class="swiper-slide"><img src="images/Blender.png"></div>
+                <div class="swiper-slide"><img src="images/Teardown3.png"></div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-shield"></div>
+            <div class="swiper-button-next swiper-button-next-shield"></div>
+            <div class="swiper-button-prev swiper-button-prev-shield"></div>
+        </div>
+    </section>
 
-        createSwiper(".mySwiperShield", ".swiper-button-next-shield", ".swiper-button-prev-shield", ".swiper-pagination-shield");
+</div>
 
-        // Lightbox logic
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const closeBtn = document.getElementById('lightboxClose');
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img id="lightboxImg" src="">
+</div>
 
-        document.querySelectorAll('.swiper-slide img').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('show');
-            });
+<!-- SCRIPTS -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+    /* GENERAL SLIDERS WITH AUTOPLAY */
+    function createSwiper(containerClass, nextBtn, prevBtn, paginationClass) {
+        return new Swiper(containerClass, {
+            loop: true,
+            spaceBetween: 1,
+            slidesPerView: 2.5,
+            centeredSlides: true,
+            pagination: {
+                el: paginationClass,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: nextBtn,
+                prevEl: prevBtn,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
         });
+    }
 
-        closeBtn.addEventListener('click', () => {
-            lightbox.classList.remove('show');
-        });
+    createSwiper(".mySwiperShield", ".swiper-button-next-shield", ".swiper-button-prev-shield", ".swiper-pagination-shield");
 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) lightbox.classList.remove('show');
+
+    /* WATER GUN SLIDER — AUTOPLAY REMOVED */
+    new Swiper(".mySwiperWaterGun", {
+        loop: true,
+        spaceBetween: 1,
+        slidesPerView: 2.5,
+        centeredSlides: true,
+        pagination: {
+            el: ".swiper-pagination-shield",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next-shield",
+            prevEl: ".swiper-button-prev-shield",
+        },
+        autoplay: false   /* KEY CHANGE */
+    });
+
+
+    /* LIGHTBOX */
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.swiper-slide img').forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.add('show');
         });
-    </script>
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.classList.remove('show');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) lightbox.classList.remove('show');
+    });
+</script>
+
 </body>
 </html>

@@ -1,661 +1,305 @@
 <!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>SEDS Rocketry</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-		<style>
-			/* Navbar styling */
-			.navbar {
-    display: flex;
-    justify-content: flex-start; /* allow left/right spacing via margin auto */
-    align-items: center;
-	background-color: rgba(51, 51, 51, 0.428);
-    padding: 1em;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    gap: 0.5em;
-    padding-right: 6em;
-}
+<head>
+    <title>SEDS Rocketry</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-		  
-			.navbar a {
-			  color: rgb(255, 255, 255);
-			  text-decoration: none;
-			  border: none; /* Ensures no borders are applied */
-			  padding: 0.5em 0.8em; /* Adjust padding for compactness */
-			  position: relative;
-			  font-size: 1.2em;
-			  display: flex;
-			  align-items: center; /* Center vertically */
-			}
-		  
-			.navbar a:hover {
-			  background-color: #33333300;
-			  border-radius: 4px;
-			}
-		  
-			/* Dropdown menu styling */
-			.dropdown {
-			  position: relative;
-			}
+    <style>
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.428);
+            padding: 1em;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            gap: 0.5em;
+            padding-right: 6em;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            border: none;
+            padding: 0.5em 0.8em;
+            position: relative;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+        }
+        .navbar a:hover { background-color: #33333300; border-radius: 4px; }
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333333;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+            min-width: 167px;
+            margin-top: 0.01em;
+        }
+        .dropdown-content a { color: white; padding: 0.5em; text-decoration: none; display: block; }
+        .dropdown-content a:hover { background-color: #575757; }
+        .dropdown:hover .dropdown-content { display: block; }
 
-			.major {
-    margin-top: 40px; /* Adjust the value to how much space you want */
-}
+        /* Header styling */
+        #header {
+            background-image: url('images/NASAHeader.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+        .inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        .inner .image.avatar img { border-radius: 50%; max-width: 150px; }
 
-		  
-			.dropdown a {
-			  display: flex;
-			  align-items: center; /* Ensures the "Projects" button is aligned with other links */
-			}
-		  
-			.dropdown-content {
-			  display: none;
-			  position: absolute;
-			  background-color: #333333;
-			  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-			  z-index: 1;
-			  border-radius: 4px;
-			  min-width: 167px;
-			  margin-top: 0.01em; /* Adds spacing below the "Projects" button */
-			}
-		  
-			.dropdown-content a {
-			  color: white;
-			  padding: 0.5em;
-			  text-decoration: none;
-			  display: block; /* Ensures dropdown items are displayed correctly */
-			}
-		  
-			.dropdown-content a:hover {
-			  background-color: #575757;
-			}
-		  
-			.dropdown:hover .dropdown-content {
-			  display: block; /* Ensures the dropdown menu displays on hover */
-			}
-		  
-			/* Header styling */
-			#header {
-			  background-image: url('images/NASAHeader.png');
-			  background-size: cover;
-			  background-position: center;
-			  height: 100vh; /* Full screen height */
-			  position: relative; /* For the inner content to position properly */
-			}
-		  
-			.inner {
-			  position: absolute;
-			  top: 50%;
-			  left: 50%;
-			  transform: translate(-50%, -50%);
-			  text-align: center;
-			  color: white; /* Optional for text readability */
-			}
-		  
-			.inner .image.avatar img {
-			  border-radius: 50%;
-			  max-width: 150px;
-			  
-			}
+        .major { margin-top: 40px; }
+        .major h2 { color: black; }
 
-			/* Project Header Styling */
-.major h2 {
-    color: black;
-}
+        /* Swiper styling for all SEDS sliders */
+        .swiper {
+            max-width: 800px;
+            height: 350px;
+            margin: 2em auto;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s;
+        }
+        .swiper-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 7.5px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        .swiper-slide:not(.swiper-slide-active) { opacity: 0.4; }
 
-			
-		  </style>
-		  </head>
-		  <body>
-			<!-- Navigation bar -->
-			<!-- Navigation bar -->
-<div class="navbar">
-    <!-- Name on top left -->
-    <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
-        <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
-    </div>
+        /* Lightbox styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+        .lightbox.show { display: flex; }
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-    <!-- Navigation links on right -->
-    <a href="index.html">Home</a>
-    <a href="About.html">About</a>
-    <div class="dropdown">
-       <a href="index.html#projects">Projects</a>
+        /* Project section spacing and separator line */
+        .project-section {
+            margin: 60px 0;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            border-top: 1px solid #ccc;
+        }
+        .project-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #828080;
+        }
+        .project-description {
+            margin: 20px auto;
+            max-width: 900px;
+            text-align: center;
+            font-size: 1.05em;
+            line-height: 1.6em;
+        }
+    </style>
+</head>
+<body class="is-preload">
 
-        <div class="dropdown-content" style="color:#575757;">
-            <a href="SEDS.html">SEDS Rocketry</a>
-            <a href="ME10.html">Design/Manufacturing</a>
-            <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
-            <a href="EWB.html">Engineers Without Borders</a>
-            <a href="ME20.html">Simulations</a>
-            <a href="Research.html">Autonomous Vehicles Research</a>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
+            <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
         </div>
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <div class="dropdown">
+           <a href="index.html#projects">Projects</a>
+           <div class="dropdown-content">
+                <a href="SEDS.html">SEDS Rocketry</a>
+                <a href="ME10.html">Design/Manufacturing</a>
+                <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
+                <a href="EWB.html">Engineers Without Borders</a>
+                <a href="ME20.html">Simulations</a>
+                <a href="Research.html">Autonomous Vehicles Research</a>
+           </div>
+        </div>
+        <a href="index.html#contact">Contact</a>
     </div>
-    <a href="index.html#contact">Contact</a>
-</div>
 
-			</div>
-		  </body>
-		<!-- Header -->
-			
-		<!-- Main -->
-			<div id="main">
+    <!-- Main content -->
+    <div id="main">
+        <!-- Introduction Section -->
+        <section class="project-section">
+            <header class="major">
+                <h2>SEDS Rocketry</h2>
+            </header>
+            <p>
+Tufts Rocketry is a student-led organization dedicated to designing, manufacturing, and launching high-power team and personal rockets. In 2024, SEDS competed for the first time at the prestigious Spaceport America Cup in Las Cruces, New Mexico, placing 18th out of 68 teams in the 10k COTS category.</p>
+<p>As a member of the Mechanical Team, I helped design and manufacture the thrust plate, payload, avionics bay, and sled for our 12-foot solid-fuel rocket, CARM, and troubleshoot all components through FEA, simulations, and test launches. In 2025, we launched a more efficient and improved 10-foot rocket, Hodge, at the International Rocket Engineering Competition (IREC). We are currently designing our third team rocket, Kindlevan, which will incorporate airbrakes. For Kindlevan, I have owned Instron bolt shear failure testing as well as FEA for the rocket's nosecone bulkhead, optimizing weight and strength. In the spring, I will be designing mounts for our GPS system.</p>           </p>
+			<p>In addition, I also built a personal custom rocket, achieving my NAR L1 High Power Rocket Certification. During the design, I selected an H163 Cesaroni motor due to its reliability and after hearing numerous cautionary tales from my teammates about other motors. I used OpenRocket for the design and simulations, modeled the fin assembly and nose cone in SolidWorks, fabricated the fin assembly with a laser cutter, and created the nose cone using a 3D printer. I used an altimeter to gather flight data and a Jolly Logic chute release to bundle the parachute. On launch day, we woke up at 4 a.m. and drove three hours to St. Albans, Vermont. It was a brisk day with practically no wind. The launch was a success! I am currently working on achieving my L2 Certification.</p>
+            <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+				<a href="https://sedstufts.org/rocketry" class="button">SEDS Rocketry</a>
+                <a href="https://sedstufts.notion.site/CARM-Technical-Documentation-2e8ebba6ad954b1c946b6060394e9795" class="button">CARM Technical Documentation</a>
+                <a href="https://sedstufts.notion.site/HODGE-Technical-Documentation-WIP-b1646c9816ec402fb9830fbabfc8ed57" class="button">HODGE Technical Documentation</a>
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>SEDS Rocketry</h2>
-						</header>
-						<!-- <p>Tufts Rocketry is a student-led organization dedicated to designing, building, and launching high-power rockets. In 2024, SEDS competed for the first time at the prestigious Spaceport America Cup in Las Cruces, New Mexico, placing 18th out of 68 teams in the 10k COTS category. I assisted the Mechanical Engineering team to design and manufacture the thrust plate, payload, avionics bay, and sled for our 12-foot SRAD solid-fuel rocket "CARM" and troubleshoot all components through FEA software, simulations, and test launches. 
-A few months later, I achieved my NAR L1 High Power Rocket Certification. After a fall semester spent designing, fabricating, and testing, I successfully launched a custom rocket with an H163 Cesaroni motor, an altimeter, and a Jolly Logic chute release using Onshape, a laser cut fin assembly, and a 3D printed nose cone. 
-</p> -->
-<p>Tufts Rocketry is a student-led organization dedicated to designing, manufacturing, and launching high-power team and personal rockets. In 2024, SEDS competed for the first time at the prestigious Spaceport America Cup in Las Cruces, New Mexico, placing 18th out of 68 teams in the 10k COTS category. As a member of the Mechanical Team, I helped design and manufacture the thrust plate, payload, avionics bay, and sled for our 12-foot solid-fuel rocket, CARM, and troubleshoot all components through FEA, simulations, and test launches. In 2025, we launched a more efficient and improved 10-foot rocket, Hodge, at the International Rocket Engineering Competition (IREC). We are currently designing our third team rocket, Kindlevan, which will incorporate airbrakes. </p> 
-<div style="display: flex; gap: 10px; margin-bottom: 20px;">
-    <ul class="actions" style="margin: 0; padding: 0; list-style: none;">
-        <li>
-            <a href="https://sedstufts.notion.site/CARM-Technical-Documentation-2e8ebba6ad954b1c946b6060394e9795" class="button">
-                CARM Technical Documentation
-            </a>
-        </li>
-    </ul>
-    <ul class="actions" style="margin: 0; padding: 0; list-style: none;">
-        <li>
-            <a href="https://sedstufts.notion.site/HODGE-Technical-Documentation-WIP-b1646c9816ec402fb9830fbabfc8ed57" class="button">
-                HODGE Technical Documentation
-            </a>
-        </li>
-    </ul>
-</div>
-
-<p>In addition, I also built a personal custom rocket, achieving my NAR L1 High Power Rocket Certification. During the design, I selected an H163 Cesaroni motor due to its reliability and after hearing numerous cautionary tales from my teammates about other motors. I used OpenRocket for the design and simulations, modeled the fin assembly and nose cone in SolidWorks, fabricated the fin assembly with a laser cutter, and created the nose cone using a 3D printer. I used an altimeter to gather flight data and a Jolly Logic chute release to bundle the parachute. On launch day, we woke up at 4 a.m. and drove three hours to St. Albans, Vermont. It was a brisk day with practically no wind. The launch was a success! I am currently working on achieving my L2 Certification.</p>
-						<ul class="actions">
-							<li><a href="https://sedstufts.org/" class="button">SEDS Website</a></li>
-						</ul>
-					</section>
-
-				<!-- Two -->
-					<!-- <section id="two"> -->
-						<!--<h2>Recent Work</h2>-->
-						<div class="row">
-							<!-- HTML -->
-							<hr style="border: 1.115px solid #a9a8a83b; width: 100%; margin: 15px 0;" />
-
-<div style="text-align: center; font-size: 2em; margin: 30px 0; width: 100%; display: block; color: #828080;">
-    2024 Team Rocket - C.A.R.M
-</div>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="images/SEDS3.jpg" class="image fit"><img src="images/SEDS3.jpg" alt="" /></a>
-    <h3>SAC Launch</h3>
-    
-</article>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="images/SEDS1.HEIC" class="image fit"><img src="images/SEDS1.HEIC" alt="" /></a>
-    <h3>Las Cruces Convention Center</h3>
-   
-</article>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="images/SEDS2.HEIC" class="image fit"><img src="images/SEDS2.HEIC" alt="" /></a>
-    <h3>SAC Launch Day Assembly</h3>
-    
-</article>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="images/caddycarmy.png" class="image fit"><img src="images/caddycarmy.png" alt="" /></a>
-    <h3>OpenRocket and CAD Assembly</h3>
-    
-</article>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="images/ThrustPlate2.png" class="image fit"><img src="images/ThrustPlate2.png" alt="" /></a>
-    <h3>Thrust Plate</h3>
-   
-</article>
-
-<hr style="border: 1.115px solid #a9a8a83b; width: 100%; margin: 15px 0;" />
-
-<div style="text-align: center; font-size: 2em; margin: 30px 0; width: 100%; display: block; color: #828080;">
-    2025 Team Rocket - H.O.D.G.E
-</div>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="images\HodgeCAD.png" class="image fit"><img src="images\HodgeCAD.png" alt="" /></a>
-    <h3>HODGE CAD Assembly</h3>
-    
-</article>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="Hodge.jpg" class="image fit"><img src="images/Hodge.jpg" alt="" /></a>
-    <h3>Fully Integrated</h3>
-    
-</article>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="HodgeTable.jpg" class="image fit"><img src="images/HodgeTable.jpg" alt="" /></a>
-    <h3>On Display at Conference</h3>
-    
-</article>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="HodgeOutsideTable.jpg" class="image fit"><img src="images/HodgeOutsideTable.jpg" alt="" /></a>
-    <h3>Pre-Launch Integration</h3>
-    
-</article>
-
-<hr style="border: 1.115px solid #a9a8a83b; width: 100%; margin: 15px 0;" />
-
-<div style="text-align: center; font-size: 2em; margin: 30px 0; width: 100%; display: block; color: #828080;">
-    Personal Rocket - "Silver Bullet"
-</div>
+            </div>
+        </section>
 
 
 
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="images/SEDSL1.JPG" class="image fit"><img src="images/SEDSL1.JPG" alt="" /></a>
-    <h3>Ready For Launch</h3>
-    
-</article>
-
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="images/L1FinAssembly.png" class="image fit"><img src="images/L1FinAssembly.png" alt="" /></a>
-    <h3>Fin Assembly CAD</h3>
-   
-</article>
-
-<article class="col-6 col-12-xsmall work-item">
-    <a href="images/L1Plot.png" class="image fit"><img src="images/L1Plot.png" alt="" /></a>
-    <h3>OpenRocket Launch Simulation</h3>
-    
-</article>
-
-<!-- CSS -->
-<style>
-    .work-item img {
-        width: 100%; /* Ensures the image fills its container */
-        height: auto; /* Maintains aspect ratio */
-        object-fit: cover; /* Ensures uniform image layout */
-        max-height: 300px; /* Set a uniform maximum height */
-    }
-
-    .work-item a.image {
-        display: block;
-        overflow: hidden; /* Ensures images don’t overflow their container */
-    }
-</style>
-
-							
+		 <!-- KINDLEVAN Slider -->
+        <section class="project-section">
+            <div class="project-title">2026 Team Rocket - K.I.N.D.L.E.V.A.N</div>
+            <div class="swiper mySwiperHODGE">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images\boltInstron.jpg" alt="HODGE CAD Assembly"></div>
+					<div class="swiper-slide"><img src="images\Screenshot 2025-12-07 154238.png" alt="HODGE CAD Assembly"></div>
+                    <div class="swiper-slide"><img src="images\BoltInstron2.jpg" alt="Fully Integrated"></div>
+                    <div class="swiper-slide"><img src="images\BoltShear.jpg" alt="On Display at Conference"></div>
+                    <div class="swiper-slide"><img src="images\BoltShear2.jpg" alt="Pre-Launch Integration"></div>
+					<div class="swiper-slide"><img src="images\Screenshot 2025-12-07 161800.png" alt="Pre-Launch Integration"></div>
+					<div class="swiper-slide"><img src="images\Screenshot 2025-12-07 161834.png" alt="Pre-Launch Integration"></div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-hodge"></div>
+                <div class="swiper-button-next swiper-button-next-hodge"></div>
+                <div class="swiper-button-prev swiper-button-prev-hodge"></div>
+            </div>
+        </section>
 
 
-						</div>
-						<ul class="actions">
-							<!--<li><a href="#" class="button">Full Portfolio</a></li>-->
-						</ul>
-					</section>
+		 <!-- H.O.D.G.E Slider -->
+        <section class="project-section">
+            <div class="project-title">2025 Team Rocket - H.O.D.G.E</div>
+            <div class="swiper mySwiperHODGE">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/HodgeCAD.png" alt="HODGE CAD Assembly"></div>
+                    <div class="swiper-slide"><img src="images/Hodge.jpg" alt="Fully Integrated"></div>
+                    <div class="swiper-slide"><img src="images/HodgeTable.jpg" alt="On Display at Conference"></div>
+                    <div class="swiper-slide"><img src="images/HodgeOutsideTable.jpg" alt="Pre-Launch Integration"></div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-hodge"></div>
+                <div class="swiper-button-next swiper-button-next-hodge"></div>
+                <div class="swiper-button-prev swiper-button-prev-hodge"></div>
+            </div>
+        </section>
 
-				
-				<!-- Four -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
 
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
+        <!-- C.A.R.M Slider -->
+        <section class="project-section">
+            <div class="project-title">2024 Team Rocket - C.A.R.M</div>
+            <div class="swiper mySwiperCAR">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/SEDS3.jpg" alt="SAC Launch"></div>
+                    <div class="swiper-slide"><img src="images/SEDS1.HEIC" alt="Las Cruces Convention Center"></div>
+                    <div class="swiper-slide"><img src="images/SEDS2.HEIC" alt="SAC Launch Day Assembly"></div>
+                    <div class="swiper-slide"><img src="images/caddycarmy.png" alt="OpenRocket and CAD Assembly"></div>
+                    <div class="swiper-slide"><img src="images/ThrustPlate2.png" alt="Thrust Plate"></div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-car"></div>
+                <div class="swiper-button-next swiper-button-next-car"></div>
+                <div class="swiper-button-prev swiper-button-prev-car"></div>
+            </div>
+        </section>
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
+       
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
+        <!-- Personal Rocket Slider -->
+        <section class="project-section">
+            <div class="project-title">Personal Rocket - "Silver Bullet"</div>
+            <div class="swiper mySwiperPersonal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/SEDSL1.JPG" alt="Ready For Launch"></div>
+                    <div class="swiper-slide"><img src="images/L1FinAssembly.png" alt="Fin Assembly CAD"></div>
+                    <div class="swiper-slide"><img src="images/L1Plot.png" alt="OpenRocket Launch Simulation"></div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-personal"></div>
+                <div class="swiper-button-next swiper-button-next-personal"></div>
+                <div class="swiper-button-prev swiper-button-prev-personal"></div>
+            </div>
+        </section>
+    </div>
 
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
-							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img id="lightboxImg" src="" alt="">
+    </div>
 
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        function createSwiper(containerClass, nextBtn, prevBtn, paginationClass) {
+            return new Swiper(containerClass, {
+                loop: true,
+                spaceBetween: 10,
+                slidesPerView: 2.5,
+                centeredSlides: true,
+                pagination: { el: paginationClass, clickable: true },
+                navigation: { nextEl: nextBtn, prevEl: prevBtn },
+                autoplay: { delay: 3000, disableOnInteraction: false }
+            });
+        }
 
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
+        createSwiper(".mySwiperCAR", ".swiper-button-next-car", ".swiper-button-prev-car", ".swiper-pagination-car");
+        createSwiper(".mySwiperHODGE", ".swiper-button-next-hodge", ".swiper-button-prev-hodge", ".swiper-pagination-hodge");
+        createSwiper(".mySwiperPersonal", ".swiper-button-next-personal", ".swiper-button-prev-personal", ".swiper-pagination-personal");
 
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeBtn = document.getElementById('lightboxClose');
 
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
+        document.querySelectorAll('.swiper-slide img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('show');
+            });
+        });
 
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
-
-					</section>
-				-->
-
-			</div>
-
-		<!-- Footer
-		<footer id="footer">
-	
-  
-			<div class="content">
-			 
-			</div>
-		  
-			<div class="inner">
-			  <ul class="icons">
-				<li><a href="https://www.instagram.com/aidanhbui/?hl=en" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="https://www.linkedin.com/in/aidan-hoidal-bui-799855294?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bc2ExZqBgT2KxMDMZaTTlzw%3D%3D" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-				<li><a href="https://github.com/aidanhbui" class="icon brands fa-github"><span class="label">Github</span></a></li>
-				<li><a href="https://app.slack.com/client/TD0KLHL2J/CCZEAB64D" class="icon brands fa-slack"><span class="label">Slack</span></a></li>
-			  </ul>
-			  <ul class="copyright">
-				
-			  </ul>
-			</div>
-		  </footer> -->
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+        closeBtn.addEventListener('click', () => { lightbox.classList.remove('show'); });
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('show'); });
+    </script>
+</body>
 </html>

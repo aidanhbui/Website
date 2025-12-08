@@ -5,8 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <!-- GLightbox CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
     <style>
         /* Navbar styling */
         .navbar {
@@ -22,8 +24,63 @@
             gap: 0.5em;
             padding-right: 6em;
         }
+        /* Remove horizontal lines added by main.css */
+section, section header, .major, .major h2, .slider-title {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
 
-        .major { margin-top: 40px; }
+hr {
+    display: none !important;
+}
+
+/* Add horizontal line above headers */
+.major h2, .slider-title {
+    position: relative;
+}
+
+
+
+/* Remove horizontal line and control spacing above headers */
+section {
+    margin-top: 1em !important;  /* reduce space above each section */
+    margin-bottom: 1em !important; /* reduce space below each section */
+    padding-top: 0 !important; /* remove internal padding */
+    padding-bottom: 0 !important;
+}
+
+/* Lines above headers */
+.major h2, .slider-title {
+    position: relative;
+    margin-bottom: 2em !important; /* smaller space below header */
+}
+
+.major h2::before,
+.slider-title::before {
+    content: "";
+    position: absolute;
+    top: -8px; /* line sits just above the header */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 1px;
+    background-color: #828080;
+}
+
+/* Remove top line for first header only */
+section:first-of-type .major h2::before {
+    display: none;
+}
+
+
+/* Reduce spacing between headers and images/sliders */
+.swiper, .image-grid {
+    margin-top: 0.5em !important;
+    margin-bottom: 1em !important;
+}
+
 
         .navbar a {
             color: white;
@@ -39,7 +96,6 @@
         .navbar a:hover { background-color: #33333300; border-radius: 4px; }
 
         .dropdown { position: relative; }
-        .dropdown a { display: flex; align-items: center; }
         .dropdown-content {
             display: none;
             position: absolute;
@@ -76,43 +132,15 @@
             color: white;
         }
 
-        .inner .image.avatar img { border-radius: 50%; max-width: 150px; }
+        .major { margin-top: 40px; }
+        .major h2 { color: black; }
 
         /* Folder card */
-        .folder-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            width: 300px;
-            margin: auto;
-        }
+        .folder-card { display: flex; flex-direction: column; align-items: center; cursor: pointer; width: 300px; margin: auto; }
 
-        .folder-stack {
-            position: relative;
-            width: 300px;
-            height: 250px;
-            perspective: 1000px;
-        }
-
-        .folder-stack a {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 250px;
-            height: 250px;
-            transition: transform 0.4s ease, z-index 0.3s ease, box-shadow 0.3s ease;
-            transform-origin: center center;
-        }
-
-        .folder-stack a img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 2px solid #ddd;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-        }
+        .folder-stack { position: relative; width: 300px; height: 250px; perspective: 1000px; }
+        .folder-stack a { position: absolute; top: 0; left: 50%; width: 250px; height: 250px; transition: transform 0.4s ease, z-index 0.3s ease, box-shadow 0.3s ease; transform-origin: center center; }
+        .folder-stack a img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 2px solid #ddd; box-shadow: 0 6px 15px rgba(0,0,0,0.35); }
 
         /* Fanned starting layout */
         .folder-stack a:nth-child(1) { transform: translateX(-90%) rotate(-8deg) scale(0.92); z-index: 2; opacity: 0.9; }
@@ -121,195 +149,218 @@
         .folder-stack a:nth-child(4) { transform: translateX(-1%) rotate(8deg) scale(0.92); z-index: 1; opacity: 0.9; }
 
         /* Hover effect */
-        .folder-stack a:hover {
-            z-index: 10;
-            transform: translateX(-50%) rotate(0deg) scale(1.1);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.55);
-            opacity: 1;
-        }
+        .folder-stack a:hover { z-index: 10; transform: translateX(-50%) rotate(0deg) scale(1.1); box-shadow: 0 15px 30px rgba(0,0,0,0.55); opacity: 1; }
 
-        .folder-card h3 {
-            margin-top: 20px;
-            text-align: center;
-            color: black;
-            font-size: 1.2em;
-        }
+        .folder-card h3 { margin-top: 20px; text-align: center; color: black; font-size: 1.2em; }
 
         /* Image styling */
-        .work-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 7.5px;
-            display: block;
-            margin: 0 auto;
-            object-fit: contain;
-        }
+        .work-item img { width: 100%; height: auto; border-radius: 7.5px; display: block; margin: 0 auto; object-fit: contain; }
 
-        /* Grid for last 4 images */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 2em;
-        }
-
-        .image-container {
-            width: 100%;
-            max-width: 600px;
-            height: 350px;
-            background-color: #f7f7f7;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .image-caption {
-            text-align: center;
-            color: black;
-            font-size: 1.1em;
-            margin-top: 0.5em;
-        }
+        .image-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 2em; }
+        .image-container { width: 100%; max-width: 600px; height: 350px; background-color: #f7f7f7; border-radius: 8px; overflow: hidden; display: flex; justify-content: center; align-items: center; margin: auto; }
+        .image-container img { max-width: 100%; max-height: 100%; object-fit: contain; cursor: pointer; }
+        .image-caption { text-align: center; color: black; font-size: 1.1em; margin-top: 0.5em; }
 
         @media (max-width: 768px) {
             .image-grid { grid-template-columns: 1fr; }
             .folder-stack { width: 90%; height: 220px; }
             .folder-stack a { width: 80%; height: 220px; }
         }
+
+        /* Swiper styling */
+        .swiper { max-width: 800px; height: 250px; margin: 2em auto; }
+        .swiper-slide { display: flex; justify-content: center; align-items: center; transition: opacity 0.3s; }
+        .swiper-slide img, .swiper-slide video { max-width: 100%; max-height: 100%; border-radius: 7.5px; object-fit: contain; cursor: pointer; display: block; }
+        .swiper-slide:not(.swiper-slide-active) { opacity: 0.4; }
+
+        /* Slider Titles */
+        .slider-title { text-align: center; font-size: 1.4em; font-weight: bold; margin-top: 2em; margin-bottom: 1em; color: #828080; }
+
+        /* Lightbox overlay */
+        #lightboxOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            cursor: pointer;
+        }
+        #lightboxOverlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
     </style>
 </head>
 <body class="is-preload">
 
-    <!-- Navigation bar -->
-    <div class="navbar">
-        <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
-            <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
-        </div>
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <div class="dropdown">
-            <a href="index.html#projects">Projects</a>
-            <div class="dropdown-content" style="color:#575757;">
-                <a href="SEDS.html">SEDS Rocketry</a>
-                <a href="ME10.html">Design/Manufacturing</a>
-                <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
-                <a href="EWB.html">Engineers Without Borders</a>
-                <a href="ME20.html">Simulations</a>
-                <a href="Research.html">Autonomous Vehicles Research</a>
-            </div>
-        </div>
-        <a href="index.html#contact">Contact</a>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div style="font-size: 1.5em; font-weight: 700; color: white; margin-right: auto;">
+        <a href="index.html" style="color: white; text-decoration: none;">Aidan Hoidal-Bui</a>
     </div>
 
-    <!-- Main -->
-    <div id="main">
-        <section id="one">
-            <header class="major">
-                <h2 style="color: black;">Engineers Without Borders - Malawi</h2>
-            </header>
-            <p>
-                Currently leading a team of 10-20 undergraduate engineers in designing and fabricating hardware sensor devices for installation in water catchment systems in Makwelani, Malawi. We're also developing an interface to measure the efficiency of our systems and detect failures within them. In the fall of 2024, I collaborated with the team to design, manufacture, and program 3D-printed load cells, scalable for monitoring water levels in a water supply system. I also assisted in the design and implementation of an automated water irrigation system for Tufts' campus greenhouse and helped optimize water usage using Arduino, sensors, and relay-based control systems.
-            </p>
-            <ul class="actions">
-                <li><a href="https://sites.tufts.edu/ewb/" class="button">EWB Website</a></li>
-            </ul>
-        </section>
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
 
-        <section id="two">
-            <div class="row">
-                <!-- Electronics Housings Gallery -->
-                <article class="col-6 col-12-xsmall work-item">
-                    <div class="folder-card">
-                        <div class="folder-stack">
-                            <a href="images/Screenshot 2025-10-19 021609.png" class="glightbox" data-gallery="cad-gallery">
-                                <img src="images/Screenshot 2025-10-19 021609.png" alt="CAD Design 1">
-                            </a>
-                            <a href="images/Screenshot 2025-10-19 020856.png" class="glightbox" data-gallery="cad-gallery">
-                                <img src="images/Screenshot 2025-10-19 020856.png" alt="CAD Design 2">
-                            </a>
-                            <a href="images/Screenshot 2025-10-19 021438.png" class="glightbox" data-gallery="cad-gallery">
-                                <img src="images/Screenshot 2025-10-19 021438.png" alt="CAD Design 3">
-                            </a>
-                            <a href="images/EWBCube.png" class="glightbox" data-gallery="cad-gallery">
-                                <img src="images/EWBCube.png" alt="CAD Design 4">
-                            </a>
-                        </div>
-                        <h3>CAD Designs for Electronics Housings</h3>
-                    </div>
-                </article>
-
-                <!-- Malawi Gallery -->
-                <article class="col-6 col-12-xsmall work-item">
-                    <div class="folder-card">
-                        <div class="folder-stack">
-                            <a href="images/EWBBucketOutside.jpg" class="glightbox" data-gallery="malawi-gallery">
-                                <img src="images/EWBBucketOutside.jpg" alt="Makwelani Outside View">
-                            </a>
-                            <a href="images/EWBBucketCloser.jpg" class="glightbox" data-gallery="malawi-gallery">
-                                <img src="images/EWBBucketCloser.jpg" alt="Makwelani Closer View">
-                            </a>
-                        </div>
-                        <h3>System Testing</h3>
-                    </div>
-                </article>
-            </div>
-
-            <!-- LAST 4 IMAGES in GRID -->
-            <div class="image-grid">
-                <div>
-                    <div class="image-container">
-                        <img src="images/EWBSEtup.png" alt="Ultrasonic Sensor Setup" />
-                    </div>
-                    <p class="image-caption">Ultrasonic Sensor Setup</p>
-                </div>
-                <div>
-                    <div class="image-container">
-                        <img src="images/LoadyCelly.JPG" alt="Prototype Load Cell With 3D Printed Plates" />
-                    </div>
-                    <p class="image-caption">Prototype Load Cell With 3D Printed Plates</p>
-                </div>
-                <div>
-                    <div class="image-container">
-                        <img src="images/LoadCellSetup.png" alt="Tank Setup" />
-                    </div>
-                    <p class="image-caption">Load Cell System Setup</p>
-                </div>
-                <div>
-                    <div class="image-container">
-                        <img src="images/Screenshot 2025-01-08 194745.png" alt="Soil Moisture Sensor" />
-                    </div>
-                    <p class="image-caption">Soil Moisture Sensor</p>
-                </div>
-            </div>
-
-        </section>
+    <div class="dropdown">
+        <a href="index.html#projects">Projects</a>
+        <div class="dropdown-content">
+            <a href="SEDS.html">SEDS Rocketry</a>
+            <a href="ME10.html">Design/Manufacturing</a>
+            <a href="Autonomous-Vehicle.html">Jetson Autonomous Vehicle</a>
+            <a href="EWB.html">Engineers Without Borders</a>
+            <a href="ME20.html">Simulations</a>
+            <a href="Research.html">Autonomous Vehicles Research</a>
+        </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <!-- GLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-        const lightbox = GLightbox({
-            selector: '.glightbox',
-            touchNavigation: true,
+    <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main">
+    <section id="one">
+        <header class="major">
+            <h2>Engineers Without Borders - Malawi</h2>
+        </header>
+        <p>
+            Currently leading a team of 10-20 undergraduate engineers in designing and fabricating hardware sensor devices for installation in water catchment systems in Makwelani, Malawi. We're also developing an interface to measure the efficiency of our systems and detect failures within them. In the fall of 2024, I collaborated with the team to design, manufacture, and program 3D-printed load cells, scalable for monitoring water levels in a water supply system. I also assisted in the design and implementation of an automated water irrigation system for Tufts' campus greenhouse and helped optimize water usage using Arduino, sensors, and relay-based control systems.
+        </p>
+        <ul class="actions">
+            <li><a href="https://sites.tufts.edu/ewb/" class="button">EWB Website</a></li>
+        </ul>
+    </section>
+
+    <!-- CAD Designs Slider -->
+    <div class="slider-title">CAD Designs for Electronics Housings</div>
+    <section>
+        <div class="swiper mySwiperEWB">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Screenshot 2025-10-19 021609.png"></div>
+                <div class="swiper-slide"><img src="images/Screenshot 2025-10-19 020856.png"></div>
+                <div class="swiper-slide"><img src="images/Screenshot 2025-10-19 021438.png"></div>
+                <div class="swiper-slide"><img src="images/EWBCube.png"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- System Testing Slider -->
+    <div class="slider-title">Initial System and Testing</div>
+    <section>
+        <div class="swiper mySwiperEWB">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/EWBSEtup.png"></div>
+                <div class="swiper-slide"><img src="images/EWBBucketOutside.jpg"></div>
+                <div class="swiper-slide"><img src="images/EWBBucketCloser.jpg"></div>
+                 
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- System Testing Slider -->
+    <div class="slider-title">Final Design</div>
+    <section>
+        <div class="swiper mySwiperEWB">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images\EWBFinalProduct.jpg"></div>
+                <div class="swiper-slide"><img src="images\EWBWiring.jpg"></div>
+                <div class="swiper-slide"><img src="images\EWB1.jpg"></div>
+                <div class="swiper-slide"><img src="images\EWB3.jpg"></div>
+                <div class="swiper-slide"><img src="images\EWB2.JPG"></div>
+                <div class="swiper-slide"><img src="images\EWBdrill.jpg"></div>
+                <div class="swiper-slide"><img src="images\EWBdrill2.jpg"></div>
+                <div class="swiper-slide"><img src="images\EWBSpread.jpg"></div>
+                <div class="swiper-slide"><img src="images\EWBPrez.jpg"></div>
+                 <div class="swiper-slide"><img src="images\DSC04268.JPG"></div>
+                <div class="swiper-slide"><img src="images\EWBday.jpg"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- Last 4 images grid -->
+    <div class="slider-title">Previous Designs</div>
+    <div class="image-grid">
+        <div>
+            <div class="image-container">
+                <img src="images/LoadyCelly.JPG" alt="Prototype Load Cell With 3D Printed Plates" />
+            </div>
+            <p class="image-caption">Prototype Load Cell With 3D Printed Plates</p>
+        </div>
+        <div>
+            <div class="image-container">
+                <img src="images/LoadCellSetup.png" alt="Tank Setup" />
+            </div>
+            <p class="image-caption">Load Cell System Setup</p>
+        </div>
+        <div>
+            <div class="image-container">
+                <img src="images/Screenshot 2025-01-08 194745.png" alt="Soil Moisture Sensor" />
+            </div>
+            <p class="image-caption">Soil Moisture Sensor</p>
+        </div>
+    </div>
+</div>
+
+<!-- Lightbox overlay -->
+<div id="lightboxOverlay"><img src="" alt="Enlarged Image"></div>
+
+<!-- SCRIPTS -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    function createSwiper(selector) {
+        return new Swiper(selector, {
             loop: true,
-            zoomable: true,
-            width: '80%',
-            height: '80%',
+            spaceBetween: 10,
+            slidesPerView: 2.5,
+            centeredSlides: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            autoplay: { delay: 3000, disableOnInteraction: false }
         });
-    </script>
+    }
+
+    createSwiper(".mySwiperEWB");
+
+    // LIGHTBOX FUNCTIONALITY
+    const lightbox = document.getElementById('lightboxOverlay');
+    const lightboxImg = lightbox.querySelector('img');
+    const allImages = document.querySelectorAll('.swiper-slide img, .image-container img');
+
+    allImages.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+        });
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    });
+</script>
+
 </body>
 </html>
